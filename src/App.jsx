@@ -5,7 +5,7 @@ import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ProductListPage from "./pages/ProductListPage";
-import CommonLayout from "./components/CommonLayout";
+import CommonLayout from "./components/commonLayout/CommonLayout";
 function App() {
   return (
     <>
