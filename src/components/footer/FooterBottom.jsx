@@ -1,8 +1,8 @@
+import { FaLocationDot } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
+import { IoCall } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Container from "../commonLayout/Container";
-import { IoCall } from "react-icons/io5";
-import { IoIosMail } from "react-icons/io";
-import { FaLocationDot } from "react-icons/fa6";
 
 const FooterBottom = () => {
   return (
@@ -14,22 +14,25 @@ const FooterBottom = () => {
               <div className="mr-[167px]">
                 <img src="images/logo.png" alt="logo" />
                 <ul className="mt-[158px] flex flex-col gap-3 font-['Montserrat'] font-normal text-base text-[#303030]">
-                  <li>
+                  <li className="relative pl-[28px]">
                     <Link to="tel:+1555123-4567">
-                      <IoCall /> +1 (555) 123-4567
+                      <IoCall className="absolute top-[3px] left-0 h-5 w-5" />{" "}
+                      +1 (555) 123-4567
                     </Link>
                   </li>
-                  <li>
+                  <li className="relative pl-[28px]">
                     <Link to="mailto:information@eshop.com">
-                      <IoIosMail /> information@eshop.com
+                      <IoIosMail className="absolute top-[1px] left-0 h-5 w-5" />{" "}
+                      information@eshop.com
                     </Link>
                   </li>
-                  <li>
+                  <li className="relative pl-[28px]">
                     <Link
                       to="https://maps.app.goo.gl/y2pNKvRCn3pEGuxH8"
                       target="_blabk"
                     >
-                      <FaLocationDot /> 123 Main Street, Suite 105, Anytown USA
+                      <FaLocationDot className="absolute top-[1px] left-0 h-5 w-5" />{" "}
+                      123 Main Street, Suite 105, Anytown USA
                     </Link>
                   </li>
                 </ul>
@@ -88,13 +91,9 @@ const FooterBottom = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-between mt-[80px] border-t border-[#BFBFBF] border-solid py-2">
-              <div className="font-['Montserrat'] font-normal text-sm text-[#303030]">
-                Copyright © 2023 E-Shop. All Rights Reserved.
-              </div>
-              <div className="font-['Montserrat'] font-normal text-sm text-[#303030]">
-                Privacy Policy | Terms & Condition | Sitemap
-              </div>
+            <div className="flex justify-between mt-[80px] border-t border-[#BFBFBF] border-solid py-2 font-['Montserrat'] font-normal text-sm text-[#303030]">
+              <span>Copyright © 2023 E-Shop. All Rights Reserved.</span>
+              <span>Privacy Policy | Terms & Condition | Sitemap</span>
             </div>
           </div>
         </Container>

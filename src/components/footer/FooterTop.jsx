@@ -5,7 +5,7 @@ const FooterTop = () => {
   return (
     <>
       <Container>
-        <div className="bg-[#D9D9D9] rounded-[25px] px-[100px] py-[114px]">
+        <div className="bg-gradient-to-r from-[#f4f4f4]  to-[#d9d9d9cb] rounded-[25px] px-[100px] py-[114px]">
           <h3 className="font-['Poppins'] font-semibold text-4xl">
             Get Our Updates
           </h3>
