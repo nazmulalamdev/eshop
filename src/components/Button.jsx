@@ -1,18 +1,16 @@
+import React from "react";
+
 const Button = ({
   text,
   bg = "#FF624C",
-  fontName = "Montserrat",
-  fontWeight = "bold",
-  size = "xl",
-  color = "white",
-  paddingY = "4",
-  paddingX = "10",
-  radius = "10",
+  paddingX = "40px",
+  paddingY = "16px",
 }) => {
   return (
     <>
       <button
-        className={`bg-[${bg}] font-${fontName} font-${fontWeight} text-${size} text-${color} py-${paddingY} px-${paddingX} rounded-[${radius}px]`}
+        className={`bg-[${bg}] rounded-[10px] text-white font-[Montserrat] font-bold text-xl`}
+        style={{ padding: `${paddingY} ${paddingX} ` }}
       >
         {text}
       </button>
