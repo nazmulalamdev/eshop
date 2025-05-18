@@ -10,7 +10,15 @@ function SampleNextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "red" }}
+      style={{
+        ...style,
+        display: "block",
+        background: "red",
+        width: "40px",
+        height: "40px",
+        borderRadius: "50%",
+        top: "50%",
+      }}
       onClick={onClick}
     />
   );
