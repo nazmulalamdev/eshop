@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { TfiAngleDown } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 
 const TopRightBar = () => {
-  const [selectedCountry, setSelectedCountey] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+
+  const countryRef = useRef(false);
+
+  const handleCountry = () => {
+    setIsOpen(!isOpen);
+  };
 
   const countries = [
     {
@@ -29,17 +35,35 @@ const TopRightBar = () => {
   ];
 
   const handleSelect = (country) => {
-    setSelectedCountey(country);
-    isOpen(false);
+    setSelectedCountry(country);
   };
+
+  useEffect(() => {
+    const handleClickCountry = (event) => {
+      // console.log(countryRef.current.contains(event.target));
+      // console.log(event.target);
+
+      if (countryRef.current && !countryRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickCountry);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickCountry);
+    };
+  }, []);
 
   return (
     <>
       <div className="flex justify-end items-center gap-[49px]">
         <div>
-          <select name="currency">
+          <select className="w-full p-2.5 dark:border-gray-600" name="currency">
             <option value="USD">USD</option>
-            <option value="BDT">BDT</option>
+            <option value="CAD">CAD</option>
+            <option value="GPB">GPB</option>
+            <option value="AUD">AUD</option>
+            <option value="EUR">EUR</option>
           </select>
         </div>
 
@@ -50,7 +74,7 @@ const TopRightBar = () => {
             value={selectedCountry?.value}
             onChange={(e) => {
               const country = countries.find((c) => c.value === e.target.value);
-              setSelectedCountey(country);
+              setSelectedCountry(country);
             }}
           >
             {countries.map((country, index) => (
@@ -86,7 +110,11 @@ const TopRightBar = () => {
 
           {/* Option List */}
           {isOpen && (
-            <ul className="absolute border border-gray-300 bg-white shadow-lg z-10">
+            <ul
+              ref={countryRef}
+              className="absolute border border-gray-300 bg-white shadow-lg z-10"
+              onClick={handleCountry}
+            >
               {countries.map((country, index) => (
                 <li
                   key={index}
@@ -96,7 +124,7 @@ const TopRightBar = () => {
                   <img
                     src={country?.flag}
                     alt={country?.name}
-                    className="w-5 h-4 mr-2"
+                    className="w-4 h-4 mr-2"
                   />
                   {country?.name}
                 </li>
