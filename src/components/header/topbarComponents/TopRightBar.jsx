@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { TfiAngleDown } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import i18n from "../../../i18n";
 
 const TopRightBar = () => {
+  // const { t } = useTransition();
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,6 +55,10 @@ const TopRightBar = () => {
       document.removeEventListener("mousedown", handleClickCountry);
     };
   }, []);
+
+  const handleLanguageChange = (selectedCountry) => {
+    i18n.changeLanguage(selectedCountry.value);
+  };
 
   return (
     <>
@@ -111,7 +117,9 @@ const TopRightBar = () => {
           {/* Option List */}
           {isOpen && (
             <ul
+              // defaultValue={option[0]} //new line
               ref={countryRef}
+              onChange={handleLanguageChange}
               className="absolute border border-gray-300 bg-white shadow-lg z-10"
               onClick={handleCountry}
             >
@@ -124,7 +132,7 @@ const TopRightBar = () => {
                   <img
                     src={country?.flag}
                     alt={country?.name}
-                    className="w-4 h-4 mr-2"
+                    className="w-5 h-4 mr-2"
                   />
                   {country?.name}
                 </li>

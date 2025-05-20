@@ -25,7 +25,7 @@ const ProductLayout = ({
     <>
       <div
         style={{ background: bg }}
-        className="border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg mb-20"
+        className="border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg"
       >
         <div className="relative">
           <img
