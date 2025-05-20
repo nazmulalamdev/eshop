@@ -4,34 +4,48 @@ import Container from "./commonLayout/Container";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+function SampleNextArrow({ onClick }) {
+  // const { className, style, onClick } = props;
   return (
     <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        background: "red",
-        width: "40px",
-        height: "40px",
-        borderRadius: "50%",
-        top: "50%",
-      }}
       onClick={onClick}
-    />
+      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+    >
+      <FaChevronRight size={16} />
+    </div>
+    // <div
+    //   className={className}
+    //   style={{
+    //     position: "absolute",
+    //     ...style,
+    //     display: "block",
+    //     background: "red",
+    //     width: "40px",
+    //     height: "40px",
+    //     borderRadius: "50%",
+    //     top: "50%",
+    //   }}
+    //   onClick={onClick}
+    // />
   );
 }
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+function SamplePrevArrow({ onClick }) {
+  // const { className, style, onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
       onClick={onClick}
-    />
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+    >
+      <FaChevronLeft />
+    </div>
+    // <div
+    //   className={className}
+    //   style={{ ...style, display: "block", background: "green" }}
+    //   onClick={onClick}
+    // />
   );
 }
 
@@ -51,70 +65,72 @@ const FeaturedProduct = () => {
   return (
     <>
       <Container>
-        <Slider {...settings}>
-          {/* <div className="flex gap-1"> */}
-          <ProductLayout
-            percentTag={true}
-            category="laptop"
-            title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
-            rating="5"
-            totalRating="80"
-            price="1,199.00"
-            border={true}
-            bg="transparent"
-            stock={true}
-            stockAmount="50"
-          />
-          <ProductLayout
-            percentTag={false}
-            category="phone"
-            title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
-            rating="4"
-            totalRating="100"
-            price="1,199.00"
-            border={true}
-            bg="transparent"
-            stock={false}
-            stockAmount="40"
-          />
-          <ProductLayout
-            percentTag={false}
-            category="audio"
-            title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
-            rating="3"
-            totalRating="64"
-            price="1,199.00"
-            border={true}
-            bg="transparent"
-            stock={true}
-            stockAmount="60"
-          />
-          <ProductLayout
-            percentTag={false}
-            category="camera"
-            title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
-            rating="2"
-            totalRating="130"
-            price="1,199.00"
-            border={true}
-            bg="transparent"
-            stock={false}
-            stockAmount="10"
-          />
-          <ProductLayout
-            percentTag={false}
-            category="television"
-            title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
-            rating="4"
-            totalRating="20"
-            price="1,199.00"
-            border={true}
-            bg="transparent"
-            stock={true}
-            stockAmount="20"
-          />
-          {/* </div> */}
-        </Slider>
+        <div className="relative">
+          <Slider {...settings}>
+            {/* <div className="flex gap-1"> */}
+            <ProductLayout
+              percentTag={true}
+              category="laptop"
+              title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+              rating="5"
+              totalRating="80"
+              price="1,199.00"
+              border={true}
+              bg="transparent"
+              stock={true}
+              stockAmount="50"
+            />
+            <ProductLayout
+              percentTag={false}
+              category="phone"
+              title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+              rating="4"
+              totalRating="100"
+              price="1,199.00"
+              border={true}
+              bg="transparent"
+              stock={false}
+              stockAmount="40"
+            />
+            <ProductLayout
+              percentTag={false}
+              category="audio"
+              title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+              rating="3"
+              totalRating="64"
+              price="1,199.00"
+              border={true}
+              bg="transparent"
+              stock={true}
+              stockAmount="60"
+            />
+            <ProductLayout
+              percentTag={false}
+              category="camera"
+              title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+              rating="2"
+              totalRating="130"
+              price="1,199.00"
+              border={true}
+              bg="transparent"
+              stock={false}
+              stockAmount="10"
+            />
+            <ProductLayout
+              percentTag={false}
+              category="television"
+              title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+              rating="4"
+              totalRating="20"
+              price="1,199.00"
+              border={true}
+              bg="transparent"
+              stock={true}
+              stockAmount="20"
+            />
+            {/* </div> */}
+          </Slider>
+        </div>
       </Container>
     </>
   );
