@@ -19,14 +19,39 @@ const NewProduct = () => {
                 Sort by
               </span>
               <select
-                className="w-[160px] p-2.5 dark:border-gray-600 font-['Montserrat'] font-bold text-base text-[#FF624C]"
+                className="w-[160px] p-2.5 bg-white font-['Montserrat'] font-bold text-base text-[#FF624C]"
                 name="currency"
               >
-                <option value="AC">All Categories</option>
-                <option value="FP">Black Friday</option>
-                <option value="NP">New Products</option>
-                <option value="AUD">Best Saller</option>
-                <option value="EUR">Free Shipping</option>
+                <option
+                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
+                  value="AC"
+                >
+                  All Categories
+                </option>
+                <option
+                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
+                  value="FP"
+                >
+                  Black Friday
+                </option>
+                <option
+                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
+                  value="NP"
+                >
+                  New Products
+                </option>
+                <option
+                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
+                  value="AUD"
+                >
+                  Best Saller
+                </option>
+                <option
+                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
+                  value="EUR"
+                >
+                  Free Shipping
+                </option>
               </select>
             </div>
           </div>
