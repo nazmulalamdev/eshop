@@ -85,7 +85,7 @@ const FeaturedProduct = () => {
             <Slider {...settings}>
               {/* <div className="flex gap-1"> */}
               <ProductLayout
-                percentTag={true}
+                percentTag="50%"
                 category="laptop"
                 title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                 rating="5"

@@ -35,7 +35,7 @@ const ProductLayout = ({
           />
           {percentTag && (
             <div className="absolute top-[-8px] right-[-9px] py-[7px] px-[20px] bg-[#FF624C] rounded-[5px] font-['Montserrat'] font-bold text-base text-[#FFFFFF]">
-              50%
+              {percentTag}
             </div>
           )}
           <div className="flex items-center absolute bottom-[6px] left-[48%] -translate-x-1/2 gap-5 scale-0 group-hover:scale-100 duration-300">

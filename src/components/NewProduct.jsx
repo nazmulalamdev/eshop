@@ -58,7 +58,7 @@ const NewProduct = () => {
 
           <div className="flex gap-1">
             <ProductLayout
-              percentTag={true}
+              percentTag="50%"
               category="laptop"
               title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
               rating="5"
@@ -94,7 +94,7 @@ const NewProduct = () => {
               stockAmount="60"
             />
             <ProductLayout
-              percentTag={false}
+              percentTag="20%"
               category="camera"
               title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
               rating="2"

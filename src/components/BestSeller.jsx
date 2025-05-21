@@ -27,7 +27,7 @@ const BestSeller = () => {
             <div className="flex gap-5 flex-wrap">
               <div className="max-w-[285px]">
                 <ProductLayout
-                  percentTag={true}
+                  percentTag={false}
                   category="laptop"
                   title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                   rating="5"
@@ -41,7 +41,7 @@ const BestSeller = () => {
               </div>
               <div className="max-w-[285px]">
                 <ProductLayout
-                  percentTag={false}
+                  percentTag="30%"
                   category="phone"
                   title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                   rating="3"
@@ -97,7 +97,7 @@ const BestSeller = () => {
               </div>
               <div className="max-w-[285px]">
                 <ProductLayout
-                  percentTag={false}
+                  percentTag="10%"
                   category="phone"
                   title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                   rating="3"
