@@ -15,6 +15,7 @@ const ProductLayout = ({
   bg,
   stock,
   stockAmount,
+  hover,
 }) => {
   const [ratingValue, setReatingValue] = useState(
     new Array(+rating).fill(rating)
