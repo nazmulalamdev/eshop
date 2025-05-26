@@ -16,6 +16,7 @@ const ProductLayout = ({
   stock,
   stockAmount,
   hover,
+  shape = "square",
 }) => {
   const [ratingValue, setReatingValue] = useState(
     new Array(+rating).fill(rating)
@@ -25,8 +26,8 @@ const ProductLayout = ({
   return (
     <>
       <div
-        style={{ background: bg }}
-        className="border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg"
+        // style={{ background: bg }}
+        className={`border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover}`}
       >
         <div className="relative">
           <img
@@ -35,7 +36,13 @@ const ProductLayout = ({
             alt="productimg"
           />
           {percentTag && (
-            <div className="absolute top-[-8px] right-[-9px] py-[7px] px-[20px] bg-[#FF624C] rounded-[5px] font-['Montserrat'] font-bold text-base text-[#FFFFFF]">
+            <div
+              className={`absolute bg-[#FF624C] ${
+                shape === "square"
+                  ? "rounded-[5px] top-[-8px] right-[-9px] py-[7px] px-[20px]"
+                  : "rounded-full w-[100px] h-[100px] top-0 right-0 flex items-center justify-center"
+              } font-['Montserrat'] font-bold text-base text-[#FFFFFF]`}
+            >
               {percentTag}
             </div>
           )}

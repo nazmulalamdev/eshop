@@ -128,9 +128,11 @@ const SpringSale = () => {
                     totalRating="80"
                     price="1,199.00"
                     border={true}
-                    bg="#D9D9D9"
+                    bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="50"
+                    hover="hover:bg-white"
+                    shape="round"
                   />
                 </div>
                 <div className="max-w-[463px]">
@@ -142,23 +144,26 @@ const SpringSale = () => {
                     totalRating="100"
                     price="1,199.00"
                     border={true}
-                    bg="#D9D9D9"
+                    bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="40"
+                    hover="hover:bg-white"
                   />
                 </div>
                 <div className="max-w-[463px]">
                   <ProductLayout
-                    percentTag={false}
+                    percentTag="20%"
                     category="audio"
                     title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                     rating="3"
                     totalRating="64"
                     price="1,199.00"
                     border={true}
-                    bg="#D9D9D9"
+                    bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="60"
+                    hover="hover:bg-white"
+                    shape="round"
                   />
                 </div>
                 <div className="max-w-[463px]">
@@ -170,9 +175,10 @@ const SpringSale = () => {
                     totalRating="130"
                     price="1,199.00"
                     border={true}
-                    bg="#D9D9D9"
+                    bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="10"
+                    hover="hover:bg-white"
                   />
                 </div>
                 <div className="max-w-[463px]">
@@ -184,9 +190,10 @@ const SpringSale = () => {
                     totalRating="20"
                     price="1,199.00"
                     border={true}
-                    bg="#D9D9D9"
+                    bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="20"
+                    hover="hover:bg-white"
                   />
                 </div>
                 {/* </div> */}
