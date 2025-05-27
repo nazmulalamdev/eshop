@@ -3,6 +3,9 @@ import { IoIosMail } from "react-icons/io";
 import { IoCall } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Container from "../commonLayout/Container";
+import Location from "../../icons/Location";
+import PhoneIcon from "../../icons/PhoneIcon";
+import MailIcon from "../../icons/MailIcon";
 
 const FooterBottom = () => {
   return (
@@ -16,13 +19,18 @@ const FooterBottom = () => {
                 <ul className="mt-[158px] flex flex-col gap-3 font-['Montserrat'] font-normal text-base text-[#303030]">
                   <li className="relative pl-[28px] hover:text-[#FF624C]">
                     <Link to="tel:+1555123-4567">
-                      <IoCall className="absolute top-[3px] left-0 h-5 w-5" />{" "}
+                      <span className="absolute top-[1px] left-0 h-5 w-5">
+                        <PhoneIcon />
+                      </span>{" "}
                       +1 (555) 123-4567
                     </Link>
                   </li>
                   <li className="relative pl-[28px] hover:text-[#FF624C]">
                     <Link to="mailto:information@eshop.com">
-                      <IoIosMail className="absolute top-[1px] left-0 h-5 w-5" />{" "}
+                      {/* <IoIosMail className="absolute top-[1px] left-0 h-5 w-5" />{" "} */}
+                      <span className="absolute top-[1px] left-0 h-5 w-5">
+                        <MailIcon />
+                      </span>
                       information@eshop.com
                     </Link>
                   </li>
@@ -31,7 +39,9 @@ const FooterBottom = () => {
                       to="https://maps.app.goo.gl/y2pNKvRCn3pEGuxH8"
                       target="_blabk"
                     >
-                      <FaLocationDot className="absolute top-[1px] left-0 h-5 w-5" />{" "}
+                      <span className="absolute top-[1px] left-0 h-5 w-5">
+                        <Location />
+                      </span>{" "}
                       123 Main Street, Suite 105, Anytown USA
                     </Link>
                   </li>
