@@ -26,7 +26,7 @@ const SpringSale = () => {
     const now = new Date().getTime();
     const difference = saleEndDate - now;
 
-    const format = (num) => num.toString().padStart(2, "0");
+    // const format = (num) => num.toString().padStart(2, "0");
 
     if (difference < 0) {
       return {
@@ -37,14 +37,12 @@ const SpringSale = () => {
       };
     }
     return {
-      days: format(Math.floor(difference / (1000 * 60 * 60 * 24))),
-      hours: format(
-        Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       ),
-      minutes: format(
-        Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-      ),
-      seconds: format(Math.floor((difference % (1000 * 60)) / 1000)),
+      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((difference % (1000 * 60)) / 1000),
     };
   }
 
@@ -83,7 +81,8 @@ const SpringSale = () => {
               <div className=" flex justify-between mt-10 max-w-[420px]">
                 <div>
                   <h2 className="flex gap-2 font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {timeLeft.days} <span className="ml-3">:</span>
+                    {String(timeLeft.days).padStart(2, "0")}{" "}
+                    <span className="ml-3">:</span>
                   </h2>
                   <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
                     Days
@@ -91,7 +90,8 @@ const SpringSale = () => {
                 </div>
                 <div>
                   <h2 className="font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {timeLeft.hours} <span className="ml-3">:</span>
+                    {String(timeLeft.hours).padStart(2, "0")}{" "}
+                    <span className="ml-3">:</span>
                   </h2>
                   <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
                     Hours
@@ -99,7 +99,8 @@ const SpringSale = () => {
                 </div>
                 <div>
                   <h2 className="font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {timeLeft.minutes} <span className="ml-3">:</span>
+                    {String(timeLeft.minutes).padStart(2, "0")}{" "}
+                    <span className="ml-3">:</span>
                   </h2>
                   <span className="font-['Montserrat'] font-normal text-base text-[#303030]">
                     Minuts
@@ -107,7 +108,7 @@ const SpringSale = () => {
                 </div>
                 <div className="mb-[72px] flex flex-col items-center">
                   <h2 className="font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {timeLeft.seconds}
+                    {String(timeLeft.seconds).padStart(2, "0")}
                   </h2>
                   <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
                     Seconds
