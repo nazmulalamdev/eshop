@@ -1,4 +1,5 @@
 import { IoMdSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 import CartIcon from "../../icons/CartIcon";
 import UserIcon from "../../icons/UserIcon";
 import Container from "../commonLayout/Container";
@@ -9,7 +10,9 @@ const MiddleBar = () => {
       <Container>
         <div className="flex items-center justify-between py-8">
           <div>
-            <img src="images/logo.png" alt="logo" />
+            <Link to={"#"}>
+              <img src="images/logo.png" alt="logo" />
+            </Link>
           </div>
           <div className="flex items-center">
             <div className="relative mr-12">
