@@ -9,6 +9,7 @@ const ProductLayout = ({
   category,
   title,
   rating,
+  ratingColor = "yellow",
   totalRating,
   price,
   border,
@@ -27,7 +28,7 @@ const ProductLayout = ({
     <>
       <div
         // style={{ background: bg }}
-        className={`border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover}`}
+        className={`border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover} ${border}`}
       >
         <div className="relative">
           <img
@@ -40,7 +41,7 @@ const ProductLayout = ({
               className={`absolute bg-[#FF624C] ${
                 shape === "square"
                   ? "rounded-[5px] top-[-8px] right-[-9px] py-[7px] px-[20px]"
-                  : "rounded-full w-[100px] h-[100px] top-0 right-0 flex items-center justify-center"
+                  : "rounded-full w-[100px] h-[100px] top-0 right-0 flex items-center justify-center font-['Poppins'] font-semibold text-[24px]"
               } font-['Montserrat'] font-bold text-base text-[#FFFFFF]`}
             >
               {percentTag}
@@ -65,7 +66,13 @@ const ProductLayout = ({
           <h3 className="font-['Poppins'] font-semibold text-xl text-['#303030'] leading-[30px] group-hover:text-[#FF624C] group-hover:underline duration-300">
             {title}
           </h3>
-          <div className="flex items-center gap-2 text-[#FED550] mt-1 mb-6">
+          <div
+            className={`flex items-center gap-2 ${
+              ratingColor === "yellow"
+                ? "text-[#FED550]"
+                : "text-[#FFF] group-hover:text-[#FED550]"
+            } duration-300 mt-1 mb-6`}
+          >
             {ratingValue.map((item, index) => (
               <FaStar key={index} />
             ))}

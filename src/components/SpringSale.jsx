@@ -11,9 +11,9 @@ function SampleNextArrow({ onClick }) {
   return (
     <div
       onClick={onClick}
-      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+      className="absolute right-[-36px] top-1/2 -translate-y-1/2 z-10 bg-[#F4F4F4] border text-[#303030] rounded-full w-[72px] h-[72px] flex items-center justify-center cursor-pointer"
     >
-      <FaChevronRight size={16} />
+      <FaChevronRight size={28} />
     </div>
   );
 }
@@ -22,7 +22,7 @@ const SpringSale = () => {
   const [timeLeft, setTimeLeft] = useState(calcutaleTimeLeft);
 
   function calcutaleTimeLeft() {
-    const saleEndDate = new Date("May 27, 2025 10:00 PM +06").getTime();
+    const saleEndDate = new Date("May 29, 2025 10:00 PM +06").getTime();
     const now = new Date().getTime();
     const difference = saleEndDate - now;
 
@@ -117,49 +117,52 @@ const SpringSale = () => {
               </div>
               <Button text="Shop Now" />
             </div>
-            <div className="max-w-[961px] relative gap-5">
+            <div className="max-w-[961px] relative px-[36px]">
               <Slider {...settings}>
                 {/* <div className="flex gap-1"> */}
-                <div className="max-w-[463px]">
+                <div className="max-w-[463px] px-3">
                   <ProductLayout
                     percentTag="50%"
                     category="laptop"
                     title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                     rating="5"
+                    ratingColor="white"
                     totalRating="80"
                     price="1,199.00"
-                    border={true}
+                    border="hover:border-none"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="50"
                     hover="hover:bg-white"
-                    shape="round"
+                    shape={"round"}
                   />
                 </div>
-                <div className="max-w-[463px]">
+                <div className="max-w-[463px] px-3">
                   <ProductLayout
                     percentTag={false}
                     category="phone"
                     title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                     rating="4"
+                    ratingColor="white"
                     totalRating="100"
                     price="1,199.00"
-                    border={true}
+                    border="hover:border-none"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="40"
                     hover="hover:bg-white"
                   />
                 </div>
-                <div className="max-w-[463px]">
+                <div className="max-w-[463px] px-3">
                   <ProductLayout
                     percentTag="20%"
                     category="audio"
                     title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                     rating="3"
+                    ratingColor="white"
                     totalRating="64"
                     price="1,199.00"
-                    border={true}
+                    border="hover:border-none"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="60"
@@ -167,30 +170,32 @@ const SpringSale = () => {
                     shape="round"
                   />
                 </div>
-                <div className="max-w-[463px]">
+                <div className="max-w-[463px] px-3">
                   <ProductLayout
                     percentTag={false}
                     category="camera"
                     title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                     rating="2"
+                    ratingColor="white"
                     totalRating="130"
                     price="1,199.00"
-                    border={true}
+                    border="hover:border-none"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="10"
                     hover="hover:bg-white"
                   />
                 </div>
-                <div className="max-w-[463px]">
+                <div className="max-w-[463px] px-3">
                   <ProductLayout
                     percentTag={false}
                     category="television"
                     title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                     rating="4"
+                    ratingColor="white"
                     totalRating="20"
                     price="1,199.00"
-                    border={true}
+                    border="hover:border-none"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="20"

@@ -33,7 +33,7 @@ const Faq = () => {
   return (
     <>
       <div
-        className="mt-[80px] py-16"
+        className="mt-[80px] py-20"
         style={{ background: "url('images/faqbg.png')" }}
       >
         <Container>

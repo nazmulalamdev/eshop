@@ -6,7 +6,7 @@ const AccordianItem = ({ title, content, onToggle, isOpen }) => {
     <>
       <div
         onClick={onToggle}
-        className="mb-6 w-full p-3 bg-white text-left py-8 px-16 rounded-[25px] font-['Poppins'] font-semibold text-[24px] text-[#303030] relative pl-[112px]"
+        className="mb-6 last:mb-0 w-full p-3 bg-white text-left py-8 px-16 rounded-[25px] font-['Poppins'] font-semibold text-[24px] text-[#303030] relative pl-[112px]"
       >
         <div>
           <button>

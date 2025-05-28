@@ -14,7 +14,7 @@ const FooterTop = () => {
             for you from newsletter.
           </p>
           <input
-            className="w-[494px] bg-white border border-[#979797] py-[18px] px-6 rounded-[10px] mb-4"
+            className="w-[494px] bg-white border border-[#929292] py-[18px] px-6 rounded-[10px] mb-4 font-['Montserrat'] font-normal text-base"
             type="text"
             placeholder="Enter your email address ..."
           />

@@ -19,7 +19,7 @@ const NewProduct = () => {
                 Sort by
               </span>
               <select
-                className="w-[160px] p-2.5 bg-white font-['Montserrat'] font-bold text-base text-[#FF624C]"
+                className="w-[233px] p-2.5 bg-white font-['Montserrat'] font-bold text-base text-[#FF624C]"
                 name="currency"
               >
                 <option

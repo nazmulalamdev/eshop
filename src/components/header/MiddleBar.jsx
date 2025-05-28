@@ -17,11 +17,11 @@ const MiddleBar = () => {
           <div className="flex items-center">
             <div className="relative mr-12">
               <input
-                className="w-[332px] border border-[#979797] py-[18px] px-6 rounded-[10px]"
+                className="w-[332px] border border-[#979797] py-[18px] px-6 rounded-[10px] font-['Montserrat'] font-normal text-sm"
                 type="text"
                 placeholder="Search Products ..."
               />
-              <IoMdSearch className="text-3xl absolute top-1/2 -translate-y-1/2 right-6" />
+              <IoMdSearch className="text-base absolute top-1/2 -translate-y-1/2 right-6 text-[#303030]" />
             </div>
             <div className="relative pl-[50px] mr-[90px]">
               <div className="absolute top-[5px] left-0">

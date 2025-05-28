@@ -9,7 +9,7 @@ import TopRightBar from "./topbarComponents/TopRightBar";
 const TopBar = () => {
   return (
     <>
-      <div className="border-b border-[#BFBFBF] border-solid py-[22px]">
+      <div className="border-b border-[#CCBFCC] border-solid py-[22px]">
         <Container>
           <div className="flex justify-between items-center font-['Montserrat'] font-normal text-sm relative">
             <TopLeftBar />
