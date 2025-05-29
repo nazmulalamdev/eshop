@@ -6,6 +6,7 @@ import Container from "./commonLayout/Container";
 import ProductLayout from "./commonLayout/ProductLayout";
 import { useEffect, useState } from "react";
 import Button from "./Button";
+import { TfiAngleRight } from "react-icons/tfi";
 
 function SampleNextArrow({ onClick }) {
   return (
@@ -13,7 +14,7 @@ function SampleNextArrow({ onClick }) {
       onClick={onClick}
       className="absolute right-[-36px] top-1/2 -translate-y-1/2 z-10 bg-[#F4F4F4] border text-[#303030] rounded-full w-[72px] h-[72px] flex items-center justify-center cursor-pointer"
     >
-      <FaChevronRight size={28} />
+      <TfiAngleRight size={28} />
     </div>
   );
 }
