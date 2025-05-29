@@ -12,6 +12,8 @@ const ProductLayout = ({
   ratingColor = "yellow",
   totalRating,
   price,
+  priceless,
+  priceColor = "black",
   border,
   bg,
   stock,
@@ -28,11 +30,11 @@ const ProductLayout = ({
     <>
       <div
         // style={{ background: bg }}
-        className={`border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover} ${border}`}
+        className={`flex flex-col h-full justify-between border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover} ${border}`}
       >
         <div className="relative">
           <img
-            className="w-full"
+            className="w-full h-full"
             src="images/productimg.png"
             alt="productimg"
           />
@@ -67,11 +69,12 @@ const ProductLayout = ({
             {title}
           </h3>
           <div
-            className={`flex items-center gap-2 ${
-              ratingColor === "yellow"
-                ? "text-[#FED550]"
-                : "text-[#FFF] group-hover:text-[#FED550]"
-            } duration-300 mt-1 mb-6`}
+            className={`flex items-center gap-2 
+              ${
+                ratingColor === "yellow"
+                  ? "text-[#FED550]"
+                  : "text-[#FFF] group-hover:text-[#FED550]"
+              } duration-300 mt-1 mb-6`}
           >
             {ratingValue.map((item, index) => (
               <FaStar key={index} />
@@ -80,9 +83,22 @@ const ProductLayout = ({
               ( {totalRating} )
             </span>
           </div>
-          <p className="font-['Poppins'] font-semibold text-2xl text-['#303030']">
-            ${price}
-          </p>
+          <div className="flex items-end gap-2">
+            <p
+              className={`font-['Poppins'] font-semibold text-2xl 
+                ${
+                  priceColor === "black" ? "text-[#303030]" : "text-[#FF624C]"
+                }`}
+            >
+              ${price}
+            </p>
+            {priceless && (
+              <span className="font-['Montserrat'] font-normal text-base text-[#303030]">
+                <del>${priceless}</del>
+              </span>
+            )}
+          </div>
+
           {stock && (
             <div className="w-full h-[30px] bg-[#E0E0E0] rounded-[25px] mt-[32px] relative">
               <div className="w-1/2 h-[30px] bg-[#303030] rounded-[25px]">

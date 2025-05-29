@@ -11,10 +11,10 @@ const TopLeftBar = () => {
           className="flex items-center gap-2"
           target="_blank"
         >
-          <IoLocationOutline /> 123 Main Street, Anytown USA
+          <IoLocationOutline size={16} /> 123 Main Street, Anytown USA
         </Link>
         <Link to="tel:1234567890" className="flex items-center gap-2">
-          <IoCallOutline /> +1 (555) 123-4567
+          <IoCallOutline size={16} /> +1 (555) 123-4567
         </Link>
       </div>
     </>

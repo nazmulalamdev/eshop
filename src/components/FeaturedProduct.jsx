@@ -85,7 +85,7 @@ const FeaturedProduct = () => {
             <Slider {...settings}>
               {/* <div className="flex gap-1"> */}
               <ProductLayout
-                percentTag="50%"
+                percentTag={false}
                 category="laptop"
                 title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
                 rating="5"
@@ -99,34 +99,36 @@ const FeaturedProduct = () => {
               <ProductLayout
                 percentTag={false}
                 category="phone"
-                title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+                title="JPhone 13 High Quality Value Buy Best Cam..."
                 rating="4"
                 totalRating="100"
-                price="1,199.00"
+                price="999.00"
                 border={true}
                 bg="transparent"
                 stock={false}
                 stockAmount="40"
               />
               <ProductLayout
-                percentTag={false}
+                percentTag="50%"
                 category="audio"
-                title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+                title="WH-1000XM4 Wireless Headphones High Qu..."
                 rating="3"
                 totalRating="64"
-                price="1,199.00"
+                price="59.00"
                 border={true}
                 bg="transparent"
                 stock={false}
                 stockAmount="60"
+                priceColor="yellow"
+                priceless="118.00"
               />
               <ProductLayout
                 percentTag={false}
                 category="camera"
-                title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+                title="Mini Polaroid Camera for Girls with Flash Li..."
                 rating="2"
                 totalRating="130"
-                price="1,199.00"
+                price="79.00"
                 border={true}
                 bg="transparent"
                 stock={false}
@@ -135,10 +137,10 @@ const FeaturedProduct = () => {
               <ProductLayout
                 percentTag={false}
                 category="television"
-                title="S21 Laptop Ultra HD LED Screen Feature 2023 ..."
+                title="AG OLED65CXPUA 4K Smart OLED TV New ..."
                 rating="4"
                 totalRating="20"
-                price="1,199.00"
+                price="2,799.00"
                 border={true}
                 bg="transparent"
                 stock={false}

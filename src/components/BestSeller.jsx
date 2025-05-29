@@ -51,6 +51,8 @@ const BestSeller = () => {
                   bg="transparent"
                   stock={false}
                   stockAmount="40"
+                  priceColor="yellow"
+                  priceless="118.00"
                 />
               </div>
               <div className="max-w-[285px]">
@@ -107,6 +109,8 @@ const BestSeller = () => {
                   bg="transparent"
                   stock={false}
                   stockAmount="40"
+                  priceColor="yellow"
+                  priceless="118.00"
                 />
               </div>
             </div>

@@ -129,12 +129,14 @@ const SpringSale = () => {
                     ratingColor="white"
                     totalRating="80"
                     price="1,199.00"
-                    border="hover:border-none"
+                    border="border-0"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="50"
                     hover="hover:bg-white"
                     shape={"round"}
+                    priceColor="yellow"
+                    priceless="5,058.00"
                   />
                 </div>
                 <div className="max-w-[463px] px-3">
@@ -146,11 +148,13 @@ const SpringSale = () => {
                     ratingColor="white"
                     totalRating="100"
                     price="1,199.00"
-                    border="hover:border-none"
+                    border="border-0"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="40"
                     hover="hover:bg-white"
+                    priceColor="yellow"
+                    priceless="5,058.00"
                   />
                 </div>
                 <div className="max-w-[463px] px-3">
@@ -162,12 +166,14 @@ const SpringSale = () => {
                     ratingColor="white"
                     totalRating="64"
                     price="1,199.00"
-                    border="hover:border-none"
+                    border="border-0"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="60"
                     hover="hover:bg-white"
                     shape="round"
+                    priceColor="yellow"
+                    priceless="5,058.00"
                   />
                 </div>
                 <div className="max-w-[463px] px-3">
@@ -179,11 +185,13 @@ const SpringSale = () => {
                     ratingColor="white"
                     totalRating="130"
                     price="1,199.00"
-                    border="hover:border-none"
+                    border="border-0"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="10"
                     hover="hover:bg-white"
+                    priceColor="yellow"
+                    priceless="5,058.00"
                   />
                 </div>
                 <div className="max-w-[463px] px-3">
@@ -195,11 +203,13 @@ const SpringSale = () => {
                     ratingColor="white"
                     totalRating="20"
                     price="1,199.00"
-                    border="hover:border-none"
+                    border="border-0"
                     bg="bg-[#D9D9D9]"
                     stock={true}
                     stockAmount="20"
                     hover="hover:bg-white"
+                    priceColor="yellow"
+                    priceless="5,058.00"
                   />
                 </div>
                 {/* </div> */}

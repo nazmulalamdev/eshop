@@ -1,4 +1,4 @@
-const ReturnIcon = () => {
+const ReturnIcon = ({ width = 40, height = 40, color = "#303030" }) => {
   return (
     <svg
       width="40"
