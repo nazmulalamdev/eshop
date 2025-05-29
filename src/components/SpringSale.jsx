@@ -22,7 +22,7 @@ const SpringSale = () => {
   const [timeLeft, setTimeLeft] = useState(calcutaleTimeLeft);
 
   function calcutaleTimeLeft() {
-    const saleEndDate = new Date("May 29, 2025 10:00 PM +06").getTime();
+    const saleEndDate = new Date("May 30, 2025 10:00 PM +06").getTime();
     const now = new Date().getTime();
     const difference = saleEndDate - now;
 
@@ -154,7 +154,6 @@ const SpringSale = () => {
                     stockAmount="40"
                     hover="hover:bg-white"
                     priceColor="yellow"
-                    priceless="5,058.00"
                   />
                 </div>
                 <div className="max-w-[463px] px-3">
@@ -191,7 +190,6 @@ const SpringSale = () => {
                     stockAmount="10"
                     hover="hover:bg-white"
                     priceColor="yellow"
-                    priceless="5,058.00"
                   />
                 </div>
                 <div className="max-w-[463px] px-3">
@@ -209,7 +207,6 @@ const SpringSale = () => {
                     stockAmount="20"
                     hover="hover:bg-white"
                     priceColor="yellow"
-                    priceless="5,058.00"
                   />
                 </div>
                 {/* </div> */}
