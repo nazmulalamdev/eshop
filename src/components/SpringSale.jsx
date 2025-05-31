@@ -23,7 +23,7 @@ const SpringSale = () => {
   const [timeLeft, setTimeLeft] = useState(calcutaleTimeLeft);
 
   function calcutaleTimeLeft() {
-    const saleEndDate = new Date("May 30, 2025 10:00 PM +06").getTime();
+    const saleEndDate = new Date("Jun 3, 2025 10:00 PM +06").getTime();
     const now = new Date().getTime();
     const difference = saleEndDate - now;
 
@@ -115,6 +115,32 @@ const SpringSale = () => {
                     Seconds
                   </span>
                 </div>
+
+                {/* <div className="text-center">
+                  <p className="text-[#E5735D] text-4xl font-semibold">07</p>
+                  <p className="text-gray-700 text-sm mt-2">Days</p>
+                </div>
+
+                <p className="text-[#E5735D] text-4xl font-semibold">:</p>
+
+                <div className="text-center">
+                  <p className="text-[#E5735D] text-4xl font-semibold">00</p>
+                  <p className="text-gray-700 text-sm mt-2">Hours</p>
+                </div>
+
+                <p className="text-[#E5735D] text-4xl font-semibold">:</p>
+
+                <div className="text-center">
+                  <p className="text-[#E5735D] text-4xl font-semibold">50</p>
+                  <p className="text-gray-700 text-sm mt-2">Minutes</p>
+                </div>
+
+                <p className="text-[#E5735D] text-4xl font-semibold">:</p>
+
+                <div className="text-center">
+                  <p className="text-[#E5735D] text-4xl font-semibold">57</p>
+                  <p className="text-gray-700 text-sm mt-2">Seconds</p>
+                </div> */}
               </div>
               <Button text="Shop Now" />
             </div>
