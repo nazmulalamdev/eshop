@@ -79,9 +79,9 @@ const SpringSale = () => {
               <h2 className=" mt-[171px] font-['Poppins'] font-bold text-[56px] text-[#303030]">
                 Spring Sale
               </h2>
-              <div className=" flex justify-between mt-10 max-w-[420px]">
-                <div>
-                  <h2 className="flex gap-2 font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
+              <div className=" flex justify-center gap-6 mt-10 max-w-[420px] mb-[72px]">
+                {/* <div>
+                  <h2 className="flex gap-2  font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
                     {String(timeLeft.days).padStart(2, "0")}{" "}
                     <span className="ml-3">:</span>
                   </h2>
@@ -114,33 +114,55 @@ const SpringSale = () => {
                   <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
                     Seconds
                   </span>
-                </div>
-
-                {/* <div className="text-center">
-                  <p className="text-[#E5735D] text-4xl font-semibold">07</p>
-                  <p className="text-gray-700 text-sm mt-2">Days</p>
-                </div>
-
-                <p className="text-[#E5735D] text-4xl font-semibold">:</p>
-
-                <div className="text-center">
-                  <p className="text-[#E5735D] text-4xl font-semibold">00</p>
-                  <p className="text-gray-700 text-sm mt-2">Hours</p>
-                </div>
-
-                <p className="text-[#E5735D] text-4xl font-semibold">:</p>
-
-                <div className="text-center">
-                  <p className="text-[#E5735D] text-4xl font-semibold">50</p>
-                  <p className="text-gray-700 text-sm mt-2">Minutes</p>
-                </div>
-
-                <p className="text-[#E5735D] text-4xl font-semibold">:</p>
-
-                <div className="text-center">
-                  <p className="text-[#E5735D] text-4xl font-semibold">57</p>
-                  <p className="text-gray-700 text-sm mt-2">Seconds</p>
                 </div> */}
+
+                <div className="text-center">
+                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                    {String(timeLeft.days).padStart(2, "0")}
+                  </h2>
+                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
+                    Days
+                  </p>
+                </div>
+
+                <span className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                  :
+                </span>
+
+                <div className="text-center">
+                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                    {String(timeLeft.hours).padStart(2, "0")}
+                  </h2>
+                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
+                    Hours
+                  </p>
+                </div>
+
+                <span className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                  :
+                </span>
+
+                <div className="text-center">
+                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                    {String(timeLeft.minutes).padStart(2, "0")}
+                  </h2>
+                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
+                    Minutes
+                  </p>
+                </div>
+
+                <span className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                  :
+                </span>
+
+                <div className="text-center">
+                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
+                    {String(timeLeft.seconds).padStart(2, "0")}
+                  </h2>
+                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
+                    Seconds
+                  </p>
+                </div>
               </div>
               <Button text="Shop Now" />
             </div>
