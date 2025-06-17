@@ -2,6 +2,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import Container from "../components/commonLayout/Container";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ProductLayout from "../components/commonLayout/ProductLayout";
 
 const ProductListPage = () => {
   let [minValue, setMinValue] = useState(10);
@@ -25,8 +26,8 @@ const ProductListPage = () => {
   return (
     <>
       <Container>
-        <div className="flex mt-16 mb-20">
-          <div className="w-[355px] bg-[#F4F4F4] rounded-[25px] p-12">
+        <div className="flex mt-16 mb-20 gap-6">
+          <div className="w-[355px] bg-[#F4F4F4] rounded-[25px] p-12 h-full">
             <div>
               <div
                 className="flex items-center justify-between mb-5"
@@ -313,7 +314,170 @@ const ProductListPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-[80%]">right</div>
+          <div className="w-[80%]">
+            <div className="flex flex-wrap gap-1">
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+              <div className="w-[24%]">
+                <ProductLayout
+                  percentTag="50%"
+                  category="audio"
+                  title="WH-1000XM4 Wireless Headphones High Qu..."
+                  rating="3"
+                  totalRating="64"
+                  price="59.00"
+                  border={true}
+                  bg="transparent"
+                  stock={false}
+                  stockAmount="60"
+                  priceColor="yellow"
+                  priceless="118.00"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </>
