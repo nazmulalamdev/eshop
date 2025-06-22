@@ -27,7 +27,7 @@ const Pagination = ({
   }
   return (
     <>
-      <div className="flaex items-center justify-center">
+      <div className="flaex items-center justify-center gap-[30px]">
         <button
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -40,7 +40,7 @@ const Pagination = ({
           <button
             key={index}
             onClick={() => onPageChange(number)}
-            className={`p-[10px] rounded-[5px] ${
+            className={`px-[18px] py-[14px] rounded-[5px] ${
               currentPage === number
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 hover:bg-gray-400"
