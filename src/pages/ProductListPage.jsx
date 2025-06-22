@@ -3,10 +3,12 @@ import Container from "../components/commonLayout/Container";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductLayout from "../components/commonLayout/ProductLayout";
+import Pagination from "../components/Pagination";
 
 const ProductListPage = () => {
   let [minValue, setMinValue] = useState(10);
   let [maxValue, setMaxValue] = useState(3000);
+  let [currentPage, setCurrentPage] = useState(1);
 
   const updateSlider = (type, value) => {
     if (type == "min") {
@@ -343,6 +345,12 @@ const ProductListPage = () => {
                 </div>
               ))}
             </div>
+            <Pagination
+              totalItems={product.length}
+              itemsPerPage={16}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            />
           </div>
         </div>
       </Container>
