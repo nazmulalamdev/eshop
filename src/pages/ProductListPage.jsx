@@ -9,6 +9,7 @@ const ProductListPage = () => {
   let [minValue, setMinValue] = useState(10);
   let [maxValue, setMaxValue] = useState(3000);
   let [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 16;
 
   const updateSlider = (type, value) => {
     if (type == "min") {
@@ -32,6 +33,9 @@ const ProductListPage = () => {
   console.log(product);
 
   const [isOpen, setIsOpen] = useState(true);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentProducts = product.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <>
@@ -326,12 +330,12 @@ const ProductListPage = () => {
           </div>
           <div className="w-[80%]">
             <div className="flex flex-wrap gap-1">
-              {product.map((index, item) => (
-                <div className="w-[24%]">
+              {currentProducts.map((item, index) => (
+                <div className="w-[24%]" key={index}>
                   <ProductLayout
                     percentTag="50%"
                     category="audio"
-                    title="WH-1000XM4 Wireless Headphones High Qu..."
+                    title={item.name}
                     rating="3"
                     totalRating="64"
                     price="59.00"
@@ -345,12 +349,14 @@ const ProductListPage = () => {
                 </div>
               ))}
             </div>
-            <Pagination
-              totalItems={product.length}
-              itemsPerPage={16}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            />
+            <div className="mx-auto">
+              <Pagination
+                totalItems={product.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+              />
+            </div>
           </div>
         </div>
       </Container>
