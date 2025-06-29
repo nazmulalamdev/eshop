@@ -279,32 +279,44 @@ const ProductListPage = () => {
                   $ {minValue}
                 </span> */}
 
-                <input
-                  type="text"
-                  placeholder="$0"
-                  value={`${minValue}`}
-                  onChange={(e) => setMinValue(e.target.value)}
-                  className="w-[124px] py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center opacity-[50%]"
-                />
-
                 {/* <span className="w-[124px] py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center">
                   $ {maxValue}
                 </span> */}
-
-                <input
-                  type="text"
-                  placeholder="$3000"
-                  value={maxValue}
-                  onChange={(e) => setMaxValue(e.target.value)}
-                  className="w-[124px] py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center opacity-[50%]"
-                />
+                <div>
+                  <input
+                    type="number"
+                    min="0"
+                    max="1000"
+                    placeholder="$0"
+                    value={minValue}
+                    step={10}
+                    onChange={(e) => updateSlider("min", e.target.value)}
+                    className="py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center opacity-[50%]"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    min="0"
+                    max="2000"
+                    placeholder="$3000"
+                    value={maxValue}
+                    step={10}
+                    onChange={(e) => updateSlider("max", e.target.value)}
+                    className="py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center opacity-[50%]"
+                  />
+                </div>
               </div>
               <div className="relative w-full h-[2px] bg-[#303030] mt-[30px]">
                 <div
                   className="absolute h-full bg-[#FF624C] left-[10%] w-[20%]"
                   style={{
                     left: `${minPercent}%`,
-                    width: `${maxPercent - minPercent}%`,
+                    width: `${
+                      maxPercent - minPercent > 100
+                        ? 100
+                        : maxPercent - minPercent
+                    }%`,
                   }}
                 ></div>
                 <input
