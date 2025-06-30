@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductLayout from "../components/commonLayout/ProductLayout";
 import Pagination from "../components/Pagination";
+import { Bounce, toast } from "react-toastify";
 
 const ProductListPage = () => {
   let [minValue, setMinValue] = useState(10);
@@ -12,12 +13,46 @@ const ProductListPage = () => {
   const itemsPerPage = 16;
 
   const updateSlider = (type, value) => {
+    const parseValue = parseInt(value);
+
+    if (parseValue > 5000 || parseValue < 0) {
+      if (type == "min") {
+        setMinValue(0);
+      } else {
+        setMaxValue(5000);
+      }
+      toast.warn("Min and Max value must be in between 0 to 1000!", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+      return;
+    }
+
+    // const newMin = Math.min(parseValue, maxValue);
+    // setMinValue(newMin);
+
+    if (isNaN(parseValue)) return;
+
     if (type == "min") {
-      const newMin = Math.min(parseInt(value), maxValue);
-      setMinValue(newMin);
+      if (parseValue > maxValue) {
+        setMinValue(maxValue);
+      } else {
+        setMinValue(parseValue);
+        return;
+      }
     } else {
-      const newMax = Math.max(parseInt(value), minValue);
-      setMaxValue(newMax);
+      if (parseValue < minValue) {
+        setMaxValue(minValue);
+      } else {
+        setMaxValue(parseValue);
+      }
     }
   };
 
@@ -32,7 +67,8 @@ const ProductListPage = () => {
 
   console.log(product);
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isCategories, setIsCategories] = useState(true);
+  const [isBrands, setIsBrands] = useState(true);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentProducts = product.slice(startIndex, startIndex + itemsPerPage);
@@ -44,8 +80,8 @@ const ProductListPage = () => {
           <div className="w-[355px] bg-[#F4F4F4] rounded-[25px] p-12 h-full">
             <div>
               <div
-                className="flex items-center justify-between mb-5"
-                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center justify-between mb-5 cursor-pointer"
+                onClick={() => setIsCategories(!isCategories)}
               >
                 <h4 className="font-['Montserrat'] font-bold text-xl">
                   Categories
@@ -54,102 +90,107 @@ const ProductListPage = () => {
                   <IoIosArrowUp size={16} />
                 </span>
               </div>
-              <ul className="flex flex-col gap-3 font-['Montserrat'] font-regular text-base text-[#303030]">
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="computer"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="computer" className="cursor-pointer">
-                      Computers & Tablets
-                    </label>
-                  </div>
-                </li>
+              {isCategories && (
+                <ul className="flex flex-col gap-3 font-['Montserrat'] font-regular text-base text-[#303030]">
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="computer"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="computer" className="cursor-pointer">
+                        Computers & Tablets
+                      </label>
+                    </div>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="mobile"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="mobile" className="cursor-pointer">
-                      Mobile & Accessories
-                    </label>
-                  </div>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="mobile"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="mobile" className="cursor-pointer">
+                        Mobile & Accessories
+                      </label>
+                    </div>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="tv"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="tv" className="cursor-pointer">
-                      TV & Home Theater
-                    </label>
-                  </div>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="tv"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="tv" className="cursor-pointer">
+                        TV & Home Theater
+                      </label>
+                    </div>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="audio"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="audio" className="cursor-pointer">
-                      Audio & Headphones
-                    </label>
-                  </div>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="audio"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="audio" className="cursor-pointer">
+                        Audio & Headphones
+                      </label>
+                    </div>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="camera"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="camera" className="cursor-pointer">
-                      Cameras & Camcorders
-                    </label>
-                  </div>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="camera"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="camera" className="cursor-pointer">
+                        Cameras & Camcorders
+                      </label>
+                    </div>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="game"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="game" className="cursor-pointer">
-                      Gaming Equipment
-                    </label>
-                  </div>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="game"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="game" className="cursor-pointer">
+                        Gaming Equipment
+                      </label>
+                    </div>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="home"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="home" className="cursor-pointer">
-                      Home Appliances
-                    </label>
-                  </div>
-                </li>
-              </ul>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="home"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="home" className="cursor-pointer">
+                        Home Appliances
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="mt-10 mb-10 w-full h-[1px] bg-[#303030] opacity-[25%]"></div>
             <div>
-              <div className="flex items-center justify-between mb-5">
+              <div
+                onClick={() => setIsBrands(!isBrands)}
+                className="flex items-center justify-between mb-5 cursor-pointer"
+              >
                 <h4 className="font-['Montserrat'] font-bold text-xl text-[#303030]">
                   Brands
                 </h4>
@@ -157,105 +198,107 @@ const ProductListPage = () => {
                   <IoIosArrowUp size={16} />
                 </span>
               </div>
-              <ul className="flex flex-col gap-3 font-['Montserrat'] font-regular text-base text-[#303030]">
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="apple"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="apple" className="cursor-pointer">
-                      Apple
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(565)</span>
-                </li>
+              {isBrands && (
+                <ul className="flex flex-col gap-3 font-['Montserrat'] font-regular text-base text-[#303030]">
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="apple"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="apple" className="cursor-pointer">
+                        Apple
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(565)</span>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="samsung"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="samsung" className="cursor-pointer">
-                      Samsung
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(428)</span>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="samsung"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="samsung" className="cursor-pointer">
+                        Samsung
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(428)</span>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="asus"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="asus" className="cursor-pointer">
-                      Asus
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(323)</span>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="asus"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="asus" className="cursor-pointer">
+                        Asus
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(323)</span>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="dell"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="dell" className="cursor-pointer">
-                      Dell
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(298)</span>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="dell"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="dell" className="cursor-pointer">
+                        Dell
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(298)</span>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="lenovo"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="lenovo" className="cursor-pointer">
-                      Lenovo
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(180)</span>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="lenovo"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="lenovo" className="cursor-pointer">
+                        Lenovo
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(180)</span>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="hp"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="hp" className="cursor-pointer">
-                      HP
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(98)</span>
-                </li>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="hp"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="hp" className="cursor-pointer">
+                        HP
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(98)</span>
+                  </li>
 
-                <li className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="panasonic"
-                      className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
-                    />
-                    <label for="panasonic" className="cursor-pointer">
-                      Panasonic
-                    </label>
-                  </div>
-                  <span className="text-gray-600">(17)</span>
-                </li>
-              </ul>
+                  <li className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        id="panasonic"
+                        className="accent-[#FF624C] w-4 h-4 rounded-[2px]"
+                      />
+                      <label for="panasonic" className="cursor-pointer">
+                        Panasonic
+                      </label>
+                    </div>
+                    <span className="text-gray-600">(17)</span>
+                  </li>
+                </ul>
+              )}
             </div>
             <div className="mt-5">
               <Link className="font-['Montserrat'] font-bold text-base text-[#303030] border-b border-b-[#303030] inline-block cursor-pointer">
@@ -275,13 +318,6 @@ const ProductListPage = () => {
                 </span>
               </div>
               <div className="flex justify-between mt-6 font-['Montserrat'] font-regular text-base text-[#303030]">
-                {/* <span className="w-[124px] py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center">
-                  $ {minValue}
-                </span> */}
-
-                {/* <span className="w-[124px] py-[25px] px-[32px] rounded-[10px] border border-[#303030] text-center">
-                  $ {maxValue}
-                </span> */}
                 <div>
                   <input
                     type="number"
@@ -361,7 +397,7 @@ const ProductListPage = () => {
                 </div>
               ))}
             </div>
-            <div className="mx-auto">
+            <div>
               <Pagination
                 totalItems={product.length}
                 itemsPerPage={itemsPerPage}
