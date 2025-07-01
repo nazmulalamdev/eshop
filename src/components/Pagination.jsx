@@ -19,7 +19,7 @@ const Pagination = ({
     const startPages = [1, 2];
     const endPages = [totalPages - 1, totalPages];
     const middlePages = [currentPage - 1, currentPage, currentPage + 1].filter(
-      (p) => p > 2 && totalPages - 1
+      (p) => p > 2 && p < totalPages - 1
     );
     const uniquePages = Array.from(
       new Set([...startPages, ...middlePages, ...endPages])
@@ -29,7 +29,7 @@ const Pagination = ({
       pages.push(uniquePages[i]);
       if (
         i < uniquePages.length - 1 &&
-        uniquePages[i + 1] - uniquePages[i] - 1
+        uniquePages[i + 1] - uniquePages[i] > 1
       ) {
         pages.push("...");
       }
@@ -70,7 +70,7 @@ const Pagination = ({
             className={`px-[18px] py-[9px] rounded-[5px] mx-2 font-['Poppins'] font-semibold text-[20px] text-[#303030] ${
               currentPage === number
                 ? "bg-[#FF624C] text-white"
-                : "bg-transprent hover:cursor-pointer"
+                : "hover:cursor-pointer hover:bg-[#FF624C] hover:text-white"
             }`}
           >
             {number}
@@ -85,7 +85,7 @@ const Pagination = ({
           <SlArrowRight size={22} />
         </button>
 
-        <span>
+        <span className="pagenumber font-['Montserrat'] font-normal text-base text-[#303030]">
           Showing {(currentPage - 1) * itemsPerPage + 1} -
           {currentPage * itemsPerPage} of {totalItems} results.
         </span>
