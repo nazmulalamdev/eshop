@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Container from "../components/commonLayout/Container";
 
 const CheckoutPage = () => {
@@ -20,44 +20,60 @@ const CheckoutPage = () => {
           <h3 className="font-['Poppins'] font-bold text-[56px] text-[#303030]">
             Checkout
           </h3>
-          <div className="flex items-center justify-center gap-[63px] font-['Poppins'] font-semibold text-[24px] mt-11">
+          <div className="flex items-center justify-center gap-[63px] font-['Poppins'] font-semibold text-[#CBCBCB] text-[24px] mt-11">
             <div
               onClick={() => setActive("info")}
               className="flex items-center gap-4 cursor-pointer"
             >
-              {active && (
+              {active === "info" && (
                 <span className="font-['Montserrat'] font-bold text-base text-white flex items-center justify-center w-[50px] h-[50px] rounded-full bg-[#FF624C]">
                   01
                 </span>
               )}
-
-              <p
-                className={`${
-                  active === "info" &&
-                  "text-[#CBCBCB] pb-2 border-b-4 border-solid border-[#FF624C]"
-                }`}
-              >
-                Information
-              </p>
+              {active && (
+                <p
+                  className={`${
+                    active === "info" &&
+                    "text-[#303030] pb-2 border-b-4 border-solid border-[#FF624C]"
+                  }`}
+                >
+                  Information
+                </p>
+              )}
             </div>
             <div
               onClick={() => setActive("shipping")}
-              className="flex items-center gap-4"
+              className="flex items-center gap-4 cursor-pointer"
             >
-              {active && (
+              {active === "shipping" && (
                 <span className="font-['Montserrat'] font-bold text-base text-white flex items-center justify-center w-[50px] h-[50px] rounded-full bg-[#FF624C]">
                   02
                 </span>
               )}
-              <p className="text-[#CBCBCB] pb-2 border-b-4 border-solid border-[#FF624C]">
+              <p
+                className={`${
+                  active === "shipping" &&
+                  "text-[#303030] pb-2 border-b-4 border-solid border-[#FF624C]"
+                }`}
+              >
                 Shipping
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <span className="font-['Montserrat'] font-bold text-base text-white flex items-center justify-center w-[50px] h-[50px] rounded-full bg-[#FF624C]">
-                03
-              </span>
-              <p className="text-[#CBCBCB] pb-2 border-b-4 border-solid border-[#FF624C]">
+            <div
+              onClick={() => setActive("payment")}
+              className="flex items-center gap-4 cursor-pointer"
+            >
+              {active === "payment" && (
+                <span className="font-['Montserrat'] font-bold text-base text-white flex items-center justify-center w-[50px] h-[50px] rounded-full bg-[#FF624C]">
+                  03
+                </span>
+              )}
+              <p
+                className={`${
+                  active === "payment" &&
+                  "text-[#303030] pb-2 border-b-4 border-solid border-[#FF624C]"
+                }`}
+              >
                 Payment
               </p>
             </div>
