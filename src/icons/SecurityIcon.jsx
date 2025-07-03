@@ -1,4 +1,4 @@
-const SecurityIcon = ({ width = 34, height = 34, color = "#303030" }) => {
+const SecurityIcon = ({ width = 40, height = 40, color = "#303030" }) => {
   return (
     <svg
       width={width}

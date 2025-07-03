@@ -10,12 +10,18 @@ import Button from "../components/Button";
 import ReturnIcon from "../icons/ReturnIcon";
 import DeliveryIcon from "../icons/DeliveryIcon";
 import SecurityIcon from "../icons/SecurityIcon";
+import { BsCart3 } from "react-icons/bs";
+import { LuMinus, LuPlus } from "react-icons/lu";
+import RelatedProduct from "../components/RelatedProduct";
 
 const ProductDetailsPage = () => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [active, setActive] = useState(false);
   const [image, setImage] = useState("");
+  let [quantity, setQuantity] = useState(1);
+  let [review, setReview] = useState(false);
+  let [description, setDescription] = useState(true);
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
 
@@ -46,18 +52,40 @@ const ProductDetailsPage = () => {
     setImage(url);
   };
 
+  let handleQuantity = (type) => {
+    if (type === "minus") {
+      if (quantity > 0) {
+        quantity--;
+        setQuantity(quantity);
+      }
+    } else {
+      quantity++;
+      setQuantity(quantity);
+    }
+  };
+
+  const handleDescription = () => {
+    setDescription(true);
+    setReview(false);
+  };
+
+  const handleReview = () => {
+    setDescription(false);
+    setReview(true);
+  };
+
   return (
     <>
       <Container>
         <div className="mt-16">
-          <div className="flex items-center gap-[10px] mb-12 text-common">
-            <span className="relative after:absolute after:content-[''] after:w-[1px] after:h-[15px] after:bg-[#303030] after:top-1/2 after:-translate-y-1/2 after:-right-[5px]">
+          <div className="flex items-center gap-8 mb-12 text-common">
+            <span className="relative after:absolute after:content-[''] after:w-[1px] after:h-[15px] after:bg-[#303030] after:top-1/2 after:-translate-y-1/2 after:-right-4">
               Home
             </span>
-            <span className="relative after:absolute after:content-[''] after:w-[1px] after:h-[15px] after:bg-[#303030] after:top-1/2 after:-translate-y-1/2 after:-right-[5px]">
+            <span className="relative after:absolute after:content-[''] after:w-[1px] after:h-[15px] after:bg-[#303030] after:top-1/2 after:-translate-y-1/2 after:-right-4">
               Computers & Tablets{" "}
             </span>
-            <span className="relative after:absolute after:content-[''] after:w-[1px] after:h-[15px] after:bg-[#303030] after:top-1/2 after:-translate-y-1/2 after:-right-[5px]">
+            <span className="relative after:absolute after:content-[''] after:w-[1px] after:h-[15px] after:bg-[#303030] after:top-1/2 after:-translate-y-1/2 after:-right-4">
               Laptop{" "}
             </span>
             <span className="font-bold">
@@ -252,32 +280,32 @@ const ProductDetailsPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-[30px]">
+          <div className="flex items-center gap-[30px] mb-[100px]">
             <div className="w-[54%]">
-              <div className="flex justify-between items-center">
-                <div className="flex items-center gap-6">
-                  <div>
-                    <SecurityIcon />
-                  </div>
-                  <div>
-                    <h6 className="font-['Montserrat'] font-bold text-base">
-                      Secure
-                    </h6>
-                    <p className="font-['Montserrat'] font-normal text-base">
-                      Certified marketplace since 2017
-                    </p>
-                  </div>
-                </div>
+              <div className="flex items-center gap-12">
                 <div className="flex items-center gap-6">
                   <div>
                     <DeliveryIcon />
                   </div>
                   <div>
                     <h6 className="font-['Montserrat'] font-bold text-base">
-                      Shipping
+                      Free Shipping
                     </h6>
                     <p className="font-['Montserrat'] font-normal text-base">
-                      Free, fast, and reliable worldwide
+                      Worldwide available
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-6">
+                  <div>
+                    <SecurityIcon />
+                  </div>
+                  <div>
+                    <h6 className="font-['Montserrat'] font-bold text-base">
+                      100% Guaranteed
+                    </h6>
+                    <p className="font-['Montserrat'] font-normal text-base">
+                      Receive product first
                     </p>
                   </div>
                 </div>
@@ -287,17 +315,187 @@ const ProductDetailsPage = () => {
                   </div>
                   <div>
                     <h6 className="font-['Montserrat'] font-bold text-base">
-                      Transparent
+                      Return Available
                     </h6>
                     <p className="font-['Montserrat'] font-normal text-base">
-                      Hassle-free return policy
+                      See return policy
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-[44%]">alam</div>
+            <div className="w-[44%]">
+              <div className="flex items-center gap-[84px]">
+                <div className="flex items-center">
+                  <button
+                    onClick={() => handleQuantity("minus")}
+                    className="w-[56px] h-[56px] hover:bg-[#F4F4F4] flex items-center justify-center rounded-full cursor-pointer"
+                  >
+                    <LuMinus size={24} />
+                  </button>
+                  <input
+                    type="text"
+                    value={quantity}
+                    className="text-center w-[180px] font-['Poppins'] font-semibold text-[36px] text-[#303030]"
+                  />
+                  <button
+                    onClick={() => handleQuantity("plus")}
+                    className="w-[56px] h-[56px] hover:bg-[#F4F4F4] flex items-center justify-center rounded-full cursor-pointer"
+                  >
+                    <LuPlus size={24} />
+                  </button>
+                </div>
+                <div className="flex gap-4">
+                  <Button text="Buy Now" />
+                  <Button
+                    text={<BsCart3 size={28} />}
+                    bg="transparent"
+                    border="1px solid #FF624C"
+                    color="#FF624C"
+                    paddingX="17px"
+                    paddingY="17px"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div>
+            <div className="flex items-center gap-12">
+              <h4
+                className={`font-['Poppins'] font-semibold text-[24px] ${
+                  description
+                    ? "text-[#303030] border-b-4 border-solid border-[#FF624C]"
+                    : "text-[#CBCBCB]"
+                } cursor-pointer pb-2`}
+                onClick={handleDescription}
+              >
+                Description
+              </h4>
+              <h4
+                className={`font-['Poppins'] font-semibold text-[24px] ${
+                  review
+                    ? "text-[#303030] border-b-4 border-solid border-[#FF624C]"
+                    : "text-[#CBCBCB]"
+                } cursor-pointer pb-2`}
+                onClick={handleReview}
+              >
+                Reviews
+              </h4>
+            </div>
+            {description && (
+              <div className="mt-12 pb-10 flex gap-6 border-b border-solid border-[#CBCBCB]">
+                <div className="w-[49%] font-[20px]">
+                  <ul className="flex gap-[95px] mb-8">
+                    <li className="w-[101px] font-['Poppins'] font-semibold">
+                      Brand
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      NexSUS Tech Company
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[95px] mb-8">
+                    <li className="w-[101px] font-['Poppins'] font-semibold">
+                      Display
+                    </li>
+                    <li className="font-['Montserrat'] font-normal w-[430px]">
+                      17.3-inch Full HD (1920 x 1080) IPS panel, 144Hz refresh
+                      rate, 3ms response time, 100% sRGB color gamut,
+                      Adaptive-Sync technology, anti-glare
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[95px] mb-8">
+                    <li className="w-[101px] font-['Poppins'] font-semibold">
+                      Processor
+                    </li>
+                    <li className="font-['Montserrat'] font-normal w-[430px]">
+                      10th Gen Intel Core i9-10980HK (8 cores, 16 threads,
+                      2.4GHz base clock speed, up to 5.3GHz turbo boost)
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[95px] mb-8">
+                    <li className="w-[101px] font-['Poppins'] font-semibold">
+                      Graphics
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      NVIDIA GeForce RTX 3080 (16GB GDDR6 VRAM)
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[95px] mb-8">
+                    <li className="w-[101px] font-['Poppins'] font-semibold">
+                      Memory
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      32GB DDR4-3200 RAM
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[95px]">
+                    <li className="w-[101px] font-['Poppins'] font-semibold">
+                      Storage
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      1TB PCIe NVMe M.2 SSD
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-[49%] font-[20px]">
+                  <ul className="flex gap-[69px] mb-8">
+                    <li className="w-[119px] font-['Poppins'] font-semibold">
+                      Audio
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      2 x 4W speakers with Smart Amp technology
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[69px] mb-8">
+                    <li className="w-[119px] font-['Poppins'] font-semibold">
+                      Connection
+                    </li>
+                    <li className="font-['Montserrat'] font-normal w-[480px]">
+                      Wi-Fi 6 (802.11ax), Bluetooth 5.1, Gigabit Ethernet, HDMI
+                      2.0b, USB 3.2 Gen 2 Type-C with DisplayPort 1.4 and Power
+                      Delivery, 3 x USB 3.2 Gen 1 Type-A, 3.5mm audio
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[69px] mb-8">
+                    <li className="w-[119px] font-['Poppins'] font-semibold">
+                      Keyboard
+                    </li>
+                    <li className="font-['Montserrat'] font-normal w-[480px]">
+                      Backlit Chiclet keyboard, N-key rollover, per-key RGB
+                      lighting, Aura Sync technology
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[69px] mb-8">
+                    <li className="w-[119px] font-['Poppins'] font-semibold">
+                      Battery
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      4-cell 90Wh lithium battery (up to 8 hours battery life)
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[69px] mb-8">
+                    <li className="w-[119px] font-['Poppins'] font-semibold">
+                      Dimensions
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      15.7 x 11.1 x 1.0 inches (W x D x H)
+                    </li>
+                  </ul>
+                  <ul className="flex gap-[69px]">
+                    <li className="w-[119px] font-['Poppins'] font-semibold">
+                      Weight
+                    </li>
+                    <li className="font-['Montserrat'] font-normal">
+                      6.28 pounds
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+            {review && <div className="w-full bg-green-500 mt-12">review</div>}
+          </div>
+          <RelatedProduct />
           {active && (
             <div className="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
               <img src={image} alt="productimg" />
