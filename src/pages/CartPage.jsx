@@ -21,24 +21,36 @@ const CartPage = () => {
           <span className="w-[16.50%]">QTY</span>
           <span className="w-[16.50%]">TOTAL</span>
         </div>
-        <div className="mb-8 py-8 pl-9 pr-16 rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030]">
-          <div className="w-[49.34%] flex gap-[62px] items-center">
-            <img src="images/cart.png" alt="cartimg" />
-            <div>
-              <p>LAPTOP</p>
-              <h3>
-                2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-              </h3>
-              <p>
-                Variant: <span>Space Gray</span>
-              </p>
+        <div>
+          <div className="mb-8 py-8 pl-9 pr-16 rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030] group border border-transparent border:border hover:border-solid hover:border-red-400">
+            <div className="w-[49.34%] flex gap-[62px] items-center">
+              <img
+                src="images/cart.png"
+                alt="cartimg"
+                className="w-[237px] h-[214px] object-cover"
+              />
+              <div>
+                <p>LAPTOP</p>
+                <h3 className="w-[314px] group-hover:text-red-500">
+                  2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
+                </h3>
+                <p>
+                  Variant: <span>Space Gray</span>
+                </p>
+              </div>
+            </div>
+            <span className="w-[16.50%]">$1,659.00</span>
+            <span className="w-[16.50%]">
+              <Counter />
+            </span>
+            <div className="w-[16.50%] flex items-center justify-between">
+              <div>$1,659.00</div>
+              <div>
+                <span>d</span>
+                <span>b</span>
+              </div>
             </div>
           </div>
-          <span className="w-[16.50%]">$1,659.00</span>
-          <span className="w-[16.50%]">
-            <Counter />
-          </span>
-          <span className="w-[16.50%]">$1,659.00</span>
         </div>
       </Container>
     </>
