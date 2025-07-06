@@ -63,13 +63,13 @@ const CartPage = () => {
             <input
               type="text"
               placeholder="Enter coupon code (ex: FIRSTPAY)"
-              className="w-full px-9 py-8 border border-solid border-[#CBCBCB] rounded-[10px]"
+              className="w-full pl-9 py-8 pr-[176px] border border-solid border-[#CBCBCB] rounded-[10px]"
             />
             <span className="absolute top-1/2 -translate-y-1/2 right-9">
               Apply Code
             </span>
           </div>
-          <div className="w-[618px] flex items-center justify-between py-8 pl-9 pr-[176px] bg-[#F4F4F4] rounded-[10px]">
+          <div className="w-[618px] flex items-center justify-between py-8 px-9 bg-[#F4F4F4] rounded-[10px]">
             <p>SUB TOTAL</p>
             <h4>
               $7,733.00
