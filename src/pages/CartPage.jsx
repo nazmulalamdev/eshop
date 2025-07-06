@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../components/commonLayout/Container";
-import Counter from "../components/Counter";
+import CartItem from "../components/CartItem";
 
 const CartPage = () => {
   return (
@@ -15,41 +15,66 @@ const CartPage = () => {
         <h2 className="font-['Poppins'] font-bold text-[56px] text-[#303030] mt-12">
           Your Cart
         </h2>
-        <div className="mb-8 py-8 px-[56px] bg-[#F4F4F4] rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030]">
-          <span className="w-[49.34%]">PRODUCT</span>
+        <div className="mb-2 py-8 px-[56px] bg-[#F4F4F4] rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030]">
+          <span className="w-[48.34%]">PRODUCT</span>
           <span className="w-[16.50%]">PRICE</span>
           <span className="w-[16.50%]">QTY</span>
           <span className="w-[16.50%]">TOTAL</span>
         </div>
         <div>
-          <div className="mb-8 py-8 pl-9 pr-16 rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030] group border border-transparent border:border hover:border-solid hover:border-red-400">
-            <div className="w-[49.34%] flex gap-[62px] items-center">
-              <img
-                src="images/cart.png"
-                alt="cartimg"
-                className="w-[237px] h-[214px] object-cover"
-              />
-              <div>
-                <p>LAPTOP</p>
-                <h3 className="w-[314px] group-hover:text-red-500">
-                  2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-                </h3>
-                <p>
-                  Variant: <span>Space Gray</span>
-                </p>
-              </div>
-            </div>
-            <span className="w-[16.50%]">$1,659.00</span>
-            <span className="w-[16.50%]">
-              <Counter />
+          <CartItem
+            item={"laptop"}
+            title={"2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD"}
+            variant={"Space Gray"}
+            price={"1,659.00"}
+            total={"1,659.00"}
+          />
+          <CartItem
+            item={"WATCH"}
+            title={"Mobile Watch A Series GPS 7/144 45 mm Red Rubber Band"}
+            variant={"Fiery Red"}
+            price={"999.00"}
+            total={"999.00"}
+          />
+          <CartItem
+            item={"television"}
+            title={"LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color USB HQ"}
+            variant={"Jet Black"}
+            price={"2,299.00"}
+            total={"4,598.00"}
+          />
+          <CartItem
+            item={"gammig"}
+            title={"Console Game Stick HD Wireless Bluetooth Connect"}
+            variant={"White"}
+            price={"109.00"}
+            total={"218.00"}
+          />
+          <CartItem
+            item={"tablet"}
+            title={"Mini Tablet Pro 16 inch HD Pencil 128 GB System RAM 28"}
+            variant={"Space Gray (with Case)"}
+            price={"259.00"}
+            total={"259.00"}
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="w-[618px] relative">
+            <input
+              type="text"
+              placeholder="Enter coupon code (ex: FIRSTPAY)"
+              className="w-full px-9 py-8 border border-solid border-[#CBCBCB] rounded-[10px]"
+            />
+            <span className="absolute top-1/2 -translate-y-1/2 right-9">
+              Apply Code
             </span>
-            <div className="w-[16.50%] flex items-center justify-between">
-              <div>$1,659.00</div>
-              <div>
-                <span>d</span>
-                <span>b</span>
-              </div>
-            </div>
+          </div>
+          <div className="w-[618px] flex items-center justify-between py-8 pl-9 pr-[176px] bg-[#F4F4F4] rounded-[10px]">
+            <p>SUB TOTAL</p>
+            <h4>
+              $7,733.00
+              <span>( excl. shipping fee )</span>
+            </h4>
           </div>
         </div>
       </Container>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LuMinus, LuPlus } from "react-icons/lu";
 
 const Counter = () => {
   let [count, setCount] = useState(1);
@@ -16,10 +17,19 @@ const Counter = () => {
   };
   return (
     <>
-      <div>
-        <button onClick={() => handleClick("minus")}>-</button>
-        <input type="text" value={count} className="w-[35px] text-center" />
-        <button onClick={() => handleClick("plus")}>+</button>
+      <div className="flex items-center">
+        <button onClick={() => handleClick("minus")} className="cursor-pointer">
+          <LuMinus size={16} />
+        </button>
+        <input
+          type="text"
+          value={count}
+          className="w-[40px] h-[40px] bg-[#F4F4F4] rounded-full mx-4 text-center font-['Montserrat'] font-bold text-base text-[#303030]"
+        />
+        <button onClick={() => handleClick("plus")} className="cursor-pointer">
+          {" "}
+          <LuPlus size={16} />
+        </button>
       </div>
     </>
   );
