@@ -16,13 +16,13 @@ const CartPage = () => {
           Your Cart
         </h2>
         <div className="mb-8 py-8 px-[56px] bg-[#F4F4F4] rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030]">
-          <span className="w-[40%]">PRODUCT</span>
-          <span className="w-[20%]">PRICE</span>
-          <span className="w-[20%]">QTY</span>
-          <span className="w-[20%]">TOTAL</span>
+          <span className="w-[49.34%]">PRODUCT</span>
+          <span className="w-[16.50%]">PRICE</span>
+          <span className="w-[16.50%]">QTY</span>
+          <span className="w-[16.50%]">TOTAL</span>
         </div>
         <div className="mb-8 py-8 pl-9 pr-16 rounded-[15px] mt-7 flex items-center font-['Montserrat'] font-bold text-base text-[#303030]">
-          <div className="w-[40%] flex gap-[62px] items-center">
+          <div className="w-[49.34%] flex gap-[62px] items-center">
             <img src="images/cart.png" alt="cartimg" />
             <div>
               <p>LAPTOP</p>
@@ -34,11 +34,11 @@ const CartPage = () => {
               </p>
             </div>
           </div>
-          <span className="w-[20%]">$1,659.00</span>
-          <span className="w-[20%]">
+          <span className="w-[16.50%]">$1,659.00</span>
+          <span className="w-[16.50%]">
             <Counter />
           </span>
-          <span className="w-[20%]">$1,659.00</span>
+          <span className="w-[16.50%]">$1,659.00</span>
         </div>
       </Container>
     </>
