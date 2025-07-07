@@ -1,6 +1,8 @@
 import React from "react";
 import Container from "../components/commonLayout/Container";
 import CartItem from "../components/CartItem";
+import Button from "../components/Button";
+import Facility from "../components/Facility";
 
 const CartPage = () => {
   return (
@@ -63,21 +65,37 @@ const CartPage = () => {
             <input
               type="text"
               placeholder="Enter coupon code (ex: FIRSTPAY)"
-              className="w-full pl-9 py-8 pr-[176px] border border-solid border-[#CBCBCB] rounded-[10px]"
+              className="w-full pl-9 py-8 pr-[176px] border border-solid border-[#CBCBCB] rounded-[10px] font-['Montserrat'] font-normal text-base text-[#303030]"
             />
-            <span className="absolute top-1/2 -translate-y-1/2 right-9">
+            <span className="absolute top-1/2 -translate-y-1/2 right-9 font-['Poppins'] font-semibold text-[20px] text-[#303030] underline cursor-pointer">
               Apply Code
             </span>
           </div>
           <div className="w-[618px] flex items-center justify-between py-8 px-9 bg-[#F4F4F4] rounded-[10px]">
-            <p>SUB TOTAL</p>
-            <h4>
+            <p className="font-['Montserrat'] font-bold text-base text-[#303030]">
+              SUB TOTAL
+            </p>
+            <h4 className="font-['Poppins'] font-semibold text-[24px] text-[#FF624C]">
               $7,733.00
-              <span>( excl. shipping fee )</span>
+              <span className="font-['Montserrat'] font-normal text-sm text-[#303030] ml-[23px]">
+                ( excl. shipping fee )
+              </span>
             </h4>
           </div>
         </div>
+        <div className="mt-8 mb-[100px] flex justify-end gap-7.5 font-bold text-[20px] text-[#303030]">
+          <button className="px-10 py-4 rounded-[10px] hover:bg-[#FF624C] hover:text-white cursor-pointer">
+            Continue Shopping
+          </button>
+          <button className="px-10 py-4 rounded-[10px] bg-[#FF624C] text-white cursor-pointer">
+            Update Cart
+          </button>
+        </div>
       </Container>
+      <div className="border-solid border-b border-[#CBCBCB]"></div>
+      <div className="mt-10 -mb-7">
+        <Facility />
+      </div>
     </>
   );
 };

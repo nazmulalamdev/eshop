@@ -35,7 +35,7 @@ const CartItem = ({ item, title, variant, price, total }) => {
           <div className="font-['Poppins'] font-semibold text-[20px] text-[#303030]">
             ${total}
           </div>
-          <div className="flex flex-col gap-[38px]">
+          <div className="flex flex-col gap-[38px] opacity-0 group-hover:opacity-100 cursor-pointer">
             <span className="text-[#FF624C] w-16 h-16 border border-solid border-[#FF624C] rounded-full flex items-center justify-center hover:bg-[#FF624C] hover:text-white">
               <RiDeleteBin6Line size={30} />
             </span>

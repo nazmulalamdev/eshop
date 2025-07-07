@@ -15,7 +15,7 @@ const Box = ({ inputtype, placeholder, type }) => {
           <textarea
             type="text"
             placeholder={placeholder}
-            className="w-full px-8 py-[25px] border border-solid border-[#CBCBCB] rounded-[10px] mt-3"
+            className="w-full px-8 py-[25px] border border-solid border-[#CBCBCB] rounded-[10px] mt-3 h-[173px] appearance-none resize-none"
           />
         ) : (
           <input

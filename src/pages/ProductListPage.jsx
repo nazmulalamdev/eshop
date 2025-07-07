@@ -4,12 +4,13 @@ import { useState } from "react";
 import ProductLayout from "../components/commonLayout/ProductLayout";
 import Pagination from "../components/Pagination";
 import PriceRange from "../components/PriceRange";
-import CategoriesListSidebar from "../components/CategoriesListSidebar";
 import { IoGridOutline } from "react-icons/io5";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ProductListSidebar from "../components/ProductListSidebar";
 import CustomCheckBox from "../components/CustomCheckBox";
+import { Categories } from "../data/Categories";
+import { Brand } from "../data/Brand";
 
 const ProductListPage = () => {
   let [currentPage, setCurrentPage] = useState(1);
@@ -32,12 +33,23 @@ const ProductListPage = () => {
         <div className="flex mt-16 mb-20 gap-6">
           <div className="w-[355px] relative">
             <div className="bg-[#F4F4F4] rounded-[25px] p-12 sticky top-0">
-              <CategoriesListSidebar />
-              <ProductListSidebar>
-                <CustomCheckBox text="Computer" />
-                <CustomCheckBox text="ram" />
-                <CustomCheckBox text="pc" />
-                <CustomCheckBox text="tab" />
+              <ProductListSidebar title={"Categories"}>
+                <div className="flex flex-col gap-3">
+                  {Categories.map((item) => (
+                    <CustomCheckBox key={item.id} text={item.label} />
+                  ))}
+                </div>
+              </ProductListSidebar>
+              <ProductListSidebar title={"Brands"} moreBrand={true}>
+                <div className="flex flex-col gap-3">
+                  {Brand.map((item) => (
+                    <CustomCheckBox
+                      key={item.id}
+                      text={item.label}
+                      quantity={item.count}
+                    />
+                  ))}
+                </div>
               </ProductListSidebar>
               <PriceRange />
             </div>

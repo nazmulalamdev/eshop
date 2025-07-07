@@ -91,35 +91,41 @@ const CheckoutPage = () => {
                 <Box inputtype="First Name" placeholder="Amelia Robert" />
               </div>
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box inputtype="Last Name" placeholder="Watson" />
               </div>
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box inputtype="Phone Number" placeholder="+123 456 7890" />
               </div>
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box
+                  inputtype="Email Address"
+                  placeholder="amelia.watson@eshop.com"
+                />
               </div>
               {/* ...... */}
               <div className="w-full">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box
+                  inputtype="Address"
+                  placeholder="Home Address, Auxiliary St. 12345, Anywhere State"
+                />
               </div>
 
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box inputtype="Country" placeholder="Indonesia" />
               </div>
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box inputtype="State" placeholder="Kalimantan Timur" />
               </div>
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box inputtype="City" placeholder="Samarinda" />
               </div>
               <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
+                <Box inputtype="ZIP Code" placeholder="555555" />
               </div>
               <div className="w-full">
                 <Box
-                  inputtype="First Name"
-                  placeholder="Amelia Robert"
+                  inputtype="Order Notes"
+                  placeholder="Enter your order notes ..."
                   type="textarea"
                 />
               </div>
