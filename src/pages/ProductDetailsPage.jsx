@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import Container from "../components/commonLayout/Container";
-import { IoClose } from "react-icons/io5";
 import Button from "../components/Button";
 import ReturnIcon from "../icons/ReturnIcon";
 import DeliveryIcon from "../icons/DeliveryIcon";
@@ -8,8 +7,9 @@ import SecurityIcon from "../icons/SecurityIcon";
 import { BsCart3 } from "react-icons/bs";
 import { LuMinus, LuPlus } from "react-icons/lu";
 import RelatedProduct from "../components/RelatedProduct";
-import ProductDetailsSlider from "../components/ProductDetailsSlider";
+import ProductDetailsSlider from "../components/productDetails/ProductDetailsSlider";
 import Review from "../components/Review";
+import ProductDetailsCounter from "../components/productDetails/ProductDetailsCounter";
 
 const ProductDetailsPage = () => {
   let [quantity, setQuantity] = useState(1);
@@ -44,7 +44,11 @@ const ProductDetailsPage = () => {
               NexSUS ROCK Strix Scar 17 Gaming Laptop
             </span>
           </div>
-          <ProductDetailsSlider />
+          <div className="flex gap-[30px] mb-[63px]">
+            <ProductDetailsSlider />
+            <ProductDetailsCounter />
+          </div>
+
           <div className="flex items-center gap-[30px] mb-[100px]">
             <div className="w-[54%]">
               <div className="flex items-center gap-12">

@@ -37,7 +37,11 @@ const ContactPage = () => {
             </p>
             <div className="mt-12 mb-8">
               <div>
-                <Box placeholder={"Amelia Robert Watson"} inputtype={"Name"} />
+                <Box
+                  placeholder={"Amelia Robert Watson"}
+                  inputtype={"Name"}
+                  star={true}
+                />
               </div>
 
               <div className="flex gap-[15px] mt-8">
@@ -51,6 +55,7 @@ const ContactPage = () => {
                   <Box
                     placeholder={"amelia.watson@eshop.com"}
                     inputtype={"Email Address"}
+                    star={true}
                   />
                 </div>
               </div>
@@ -59,6 +64,7 @@ const ContactPage = () => {
                   type={"textarea"}
                   placeholder={"Enter your message ..."}
                   inputtype={"Message"}
+                  star={true}
                 />
               </div>
             </div>

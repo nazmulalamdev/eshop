@@ -3,6 +3,7 @@ import Container from "../components/commonLayout/Container";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
 import Facility from "../components/Facility";
+import { CartItemData } from "../data/CartItemData";
 
 const CartPage = () => {
   return (
@@ -24,41 +25,16 @@ const CartPage = () => {
           <span className="w-[16.50%]">TOTAL</span>
         </div>
         <div>
-          <CartItem
-            item={"laptop"}
-            title={"2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD"}
-            variant={"Space Gray"}
-            price={"1,659.00"}
-            total={"1,659.00"}
-          />
-          <CartItem
-            item={"WATCH"}
-            title={"Mobile Watch A Series GPS 7/144 45 mm Red Rubber Band"}
-            variant={"Fiery Red"}
-            price={"999.00"}
-            total={"999.00"}
-          />
-          <CartItem
-            item={"television"}
-            title={"LP78245 Smart TV OLED 43 Inch 4K HD Dynamic Color USB HQ"}
-            variant={"Jet Black"}
-            price={"2,299.00"}
-            total={"4,598.00"}
-          />
-          <CartItem
-            item={"gammig"}
-            title={"Console Game Stick HD Wireless Bluetooth Connect"}
-            variant={"White"}
-            price={"109.00"}
-            total={"218.00"}
-          />
-          <CartItem
-            item={"tablet"}
-            title={"Mini Tablet Pro 16 inch HD Pencil 128 GB System RAM 28"}
-            variant={"Space Gray (with Case)"}
-            price={"259.00"}
-            total={"259.00"}
-          />
+          {CartItemData.map((product, index) => (
+            <CartItem
+              key={index}
+              item={product.item}
+              title={product.title}
+              variant={product.variant}
+              price={product.price}
+              total={product.total}
+            />
+          ))}
         </div>
         <div className="flex items-center justify-between">
           <div className="w-[618px] relative">

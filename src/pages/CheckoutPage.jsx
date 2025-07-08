@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Container from "../components/commonLayout/Container";
-import Box from "../components/Box";
-import Button from "../components/Button";
+import { CheckoutData } from "../data/CheckoutData";
+import BillingForm from "../components/BillingForm";
 
 const CheckoutPage = () => {
   const [active, setActive] = useState("info");
@@ -83,111 +83,36 @@ const CheckoutPage = () => {
         </div>
         <div className="flex gap-[56px] mt-10 mb-20">
           <div className="w-[57.24%]">
-            <h3 className="font-['Poppins'] font-semibold text-[36px] text-[#303030] mb-10">
-              Billing Details
-            </h3>
-            <div className="flex flex-wrap gap-x-4 gap-y-8">
-              <div className="w-[49%]">
-                <Box inputtype="First Name" placeholder="Amelia Robert" />
-              </div>
-              <div className="w-[49%]">
-                <Box inputtype="Last Name" placeholder="Watson" />
-              </div>
-              <div className="w-[49%]">
-                <Box inputtype="Phone Number" placeholder="+123 456 7890" />
-              </div>
-              <div className="w-[49%]">
-                <Box
-                  inputtype="Email Address"
-                  placeholder="amelia.watson@eshop.com"
-                />
-              </div>
-              {/* ...... */}
-              <div className="w-full">
-                <Box
-                  inputtype="Address"
-                  placeholder="Home Address, Auxiliary St. 12345, Anywhere State"
-                />
-              </div>
-
-              <div className="w-[49%]">
-                <Box inputtype="Country" placeholder="Indonesia" />
-              </div>
-              <div className="w-[49%]">
-                <Box inputtype="State" placeholder="Kalimantan Timur" />
-              </div>
-              <div className="w-[49%]">
-                <Box inputtype="City" placeholder="Samarinda" />
-              </div>
-              <div className="w-[49%]">
-                <Box inputtype="ZIP Code" placeholder="555555" />
-              </div>
-              <div className="w-full">
-                <Box
-                  inputtype="Order Notes"
-                  placeholder="Enter your order notes ..."
-                  type="textarea"
-                />
-              </div>
-            </div>
+            <BillingForm />
           </div>
           <div className="w-[39.8%]">
             <div className="bg-[#F4F4F4] rounded-[25px] p-10">
               <h3 className="font-['Poppins'] font-semibold text-[24px] text-[#303030] mb-7">
                 Order Summary
               </h3>
-              <div className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] border-b border-solid border-[#C3C3C3] pb-5 mt-5">
-                <div className="w-[250px]">
-                  <p className="font-normal">
-                    2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-                  </p>
+              {CheckoutData.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] border-b border-solid border-[#C3C3C3] pb-5 mt-5"
+                >
+                  <div className="w-[250px]">
+                    <p className="font-normal">{item.name}</p>
+                  </div>
+                  <div className="font-bold w-[30px]">{item.quantity}</div>
+                  <div className="w-[125px] font-['Poppins'] font-semibold">
+                    ${item.price}
+                  </div>
                 </div>
-                <div className="font-bold">1</div>
-                <div className="font-['Poppins'] font-semibold">$1,659.00</div>
-              </div>
-              <div className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] border-b border-solid border-[#C3C3C3] pb-5 mt-5">
-                <div className="w-[250px]">
-                  <p className="font-normal">
-                    2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-                  </p>
-                </div>
-                <div className="font-bold">1</div>
-                <div className="font-['Poppins'] font-semibold">$1,659.00</div>
-              </div>
-              <div className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] border-b border-solid border-[#C3C3C3] pb-5 mt-5">
-                <div className="w-[250px]">
-                  <p className="font-normal">
-                    2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-                  </p>
-                </div>
-                <div className="font-bold">1</div>
-                <div className="font-['Poppins'] font-semibold">$1,659.00</div>
-              </div>
-              <div className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] border-b border-solid border-[#C3C3C3] pb-5 mt-5">
-                <div className="w-[250px]">
-                  <p className="font-normal">
-                    2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-                  </p>
-                </div>
-                <div className="font-bold">1</div>
-                <div className="font-['Poppins'] font-semibold">$1,659.00</div>
-              </div>
-              <div className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] border-b border-solid border-[#C3C3C3] pb-5 mt-5">
-                <div className="w-[250px]">
-                  <p className="font-normal">
-                    2019 Smart Laptop 256 GB 13 inch Pro Chip Core 1 TB HD SSD
-                  </p>
-                </div>
-                <div className="font-bold">1</div>
-                <div className="font-['Poppins'] font-semibold">$1,659.00</div>
-              </div>
+              ))}
+
               <div className="flex justify-between font-['Montserrat'] text-[20px] text-[#303030] mt-5 mb-12">
-                <div className="w-[250px]">
-                  <p className="font-normal">
-                    Shipping Fee <span></span>
-                  </p>
+                <div className="w-[250px] flex">
+                  <p className="font-normal mr-1.5">Shipping Fee</p>
+                  <span className="w-5 h-5 flex items-center justify-center border-2 border-[#FF624C] text-[#FF624C] rounded-full text-[10px]">
+                    ?
+                  </span>
                 </div>
-                <div className="font-bold">1</div>
+                <div className="w-[125px] font-bold">$10.00</div>
               </div>
               <div className="bg-white rounded-[10px] p-6">
                 <div className="flex justify-between items-center font-['Montserrat'] font-bold text-[#303030] mb-6">

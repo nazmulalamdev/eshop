@@ -7,6 +7,7 @@ import ProductLayout from "./commonLayout/ProductLayout";
 import { useEffect, useState } from "react";
 import Button from "./Button";
 import { TfiAngleRight } from "react-icons/tfi";
+import Timmer from "./Timmer";
 
 function SampleNextArrow({ onClick }) {
   return (
@@ -20,43 +21,6 @@ function SampleNextArrow({ onClick }) {
 }
 
 const SpringSale = () => {
-  const [timeLeft, setTimeLeft] = useState(calcutaleTimeLeft);
-
-  function calcutaleTimeLeft() {
-    const saleEndDate = new Date("Jun 3, 2025 10:00 PM +06").getTime();
-    const now = new Date().getTime();
-    const difference = saleEndDate - now;
-
-    // const format = (num) => num.toString().padStart(2, "0");
-
-    if (difference < 0) {
-      return {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
-    }
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      ),
-      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((difference % (1000 * 60)) / 1000),
-    };
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calcutaleTimeLeft());
-    }, 1000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
   var settings = {
     dots: false,
     infinite: true,
@@ -79,91 +43,7 @@ const SpringSale = () => {
               <h2 className=" mt-[171px] font-['Poppins'] font-bold text-[56px] text-[#303030]">
                 Spring Sale
               </h2>
-              <div className=" flex justify-center gap-6 mt-10 max-w-[420px] mb-[72px]">
-                {/* <div>
-                  <h2 className="flex gap-2  font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {String(timeLeft.days).padStart(2, "0")}{" "}
-                    <span className="ml-3">:</span>
-                  </h2>
-                  <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
-                    Days
-                  </span>
-                </div>
-                <div>
-                  <h2 className="font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {String(timeLeft.hours).padStart(2, "0")}{" "}
-                    <span className="ml-3">:</span>
-                  </h2>
-                  <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
-                    Hours
-                  </span>
-                </div>
-                <div>
-                  <h2 className="font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {String(timeLeft.minutes).padStart(2, "0")}{" "}
-                    <span className="ml-3">:</span>
-                  </h2>
-                  <span className="font-['Montserrat'] font-normal text-base text-[#303030]">
-                    Minuts
-                  </span>
-                </div>
-                <div className="mb-[72px] flex flex-col items-center">
-                  <h2 className="font-['Poppins'] font-semibold text-[36px] text-[#FF624C]">
-                    {String(timeLeft.seconds).padStart(2, "0")}
-                  </h2>
-                  <span className="font-['Montserrat'] font-normal text-base text-[#303030] left-[58px]">
-                    Seconds
-                  </span>
-                </div> */}
-
-                <div className="text-center">
-                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                    {String(timeLeft.days).padStart(2, "0")}
-                  </h2>
-                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
-                    Days
-                  </p>
-                </div>
-
-                <span className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                  :
-                </span>
-
-                <div className="text-center">
-                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                    {String(timeLeft.hours).padStart(2, "0")}
-                  </h2>
-                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
-                    Hours
-                  </p>
-                </div>
-
-                <span className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                  :
-                </span>
-
-                <div className="text-center">
-                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                    {String(timeLeft.minutes).padStart(2, "0")}
-                  </h2>
-                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
-                    Minutes
-                  </p>
-                </div>
-
-                <span className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                  :
-                </span>
-
-                <div className="text-center">
-                  <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
-                    {String(timeLeft.seconds).padStart(2, "0")}
-                  </h2>
-                  <p className="font-['Montserrat'] font-normal text-base text-[#303030] mt-2">
-                    Seconds
-                  </p>
-                </div>
-              </div>
+              <Timmer />
               <Button text="Shop Now" />
             </div>
             <div className="max-w-[961px] relative px-[36px]">

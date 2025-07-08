@@ -23,17 +23,20 @@ const MiddleBar = () => {
               />
               <IoMdSearch className="text-base absolute top-1/2 -translate-y-1/2 right-6 text-[#303030]" />
             </div>
-            <div className="relative pl-[50px] mr-[90px]">
-              <div className="absolute top-[8px] left-0">
-                <CartIcon />
+            <Link to={"/cart"}>
+              <div className="relative pl-[50px] mr-[90px]">
+                <div className="absolute top-[8px] left-0">
+                  <CartIcon />
+                </div>
+                <p className="font-['Montserrat'] font-normal text-base leading-6">
+                  Cart
+                </p>
+                <span className="font-['Montserrat'] font-bold text-sm leading-4">
+                  $ 150,00
+                </span>
               </div>
-              <p className="font-['Montserrat'] font-normal text-base leading-6">
-                Cart
-              </p>
-              <span className="font-['Montserrat'] font-bold text-sm leading-4">
-                $ 150,00
-              </span>
-            </div>
+            </Link>
+
             <div className="relative pl-[50px] after:content[''] after:absolute after:w-[1px] after:h-8 after:bg-[#BFBFBF] after:left-[-45px] after:top-1/2 after:-translate-y-1/2">
               <div className="absolute top-[10px] left-0">
                 <UserIcon />
