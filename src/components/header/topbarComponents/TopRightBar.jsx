@@ -43,9 +43,12 @@ const TopRightBar = () => {
 
   return (
     <>
-      <div className="flex justify-end items-center gap-[49px]">
+      <div className="flex sm:justify-end justify-between items-center sm:gap-[49px]">
         <div>
-          <select className="w-full p-2.5 dark:border-gray-600" name="currency">
+          <select
+            className="w-full sm:p-2.5 py-2.5 pr-2.5 dark:border-gray-600"
+            name="currency"
+          >
             {CurrencyData.map((item) => (
               <option key={item.label} value={item.code}>
                 {item.symbol} {item.code}
@@ -54,7 +57,7 @@ const TopRightBar = () => {
           </select>
         </div>
 
-        <div className="relaltive after:content-[''] after:absolute after:w-[1px] after:h-[32px] after:bg-[#BFBFBF] after:right-[295px] after:top-[50%] after:-translate-y-1/2 before:content-[''] before:absolute before:w-[1px] before:h-[32px] before:bg-[#BFBFBF] before:right-[112px] before:top-[50%] before:-translate-y-1/2">
+        <div className="relaltive after:content-[''] after:absolute after:w-[1px] sm:after:h-8 after:h-4 after:bg-[#BFBFBF] sm:after:right-[295px] after:right-[265px] sm:after:top-1/2 after:top-[70%] after:-translate-y-1/2 before:content-[''] before:absolute before:w-[1px] sm:before:h-8 before:h-4 before:bg-[#BFBFBF] sm:before:right-[112px] before:right-[90px] sm:before:top-1/2 before:top-[70%] before:-translate-y-1/2">
           <select
             className="w-[150px] hidden"
             name="country"

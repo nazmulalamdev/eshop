@@ -69,7 +69,7 @@ const BottomBar = () => {
 
   return (
     <>
-      <div className="bg-[#FF624C]">
+      <div className="hidden bg-[#FF624C] sm:block">
         <Container>
           <div className="flex justify-between items-center py-6">
             <div>
@@ -119,7 +119,7 @@ const BottomBar = () => {
                     <FaChevronDown className="absolute top-1 -right-6" />
                   </button>
                   {isDropdownOpen && (
-                    <div className="absolute z-10 mt-2 w-36 bg-white rounded shadow-lg">
+                    <div className="absolute z-10 mt-2 w-36 bg-white rounded-lg shadow-lg">
                       <ul className="py-2 font-['Montserrat'] font-normal text-base leading-6 text-black">
                         <li
                           onClick={handleDropdown}
@@ -172,6 +172,34 @@ const BottomBar = () => {
             </div>
           </div>
         </Container>
+      </div>
+      <div className="block sm:hidden">
+        <ul className="sm:hidden h-screen top-0 py-2 font-['Montserrat'] font-normal text-base leading-6 text-black absolute z-10 mt-2 w-full bg-white shadow-xl rounded-lg">
+          <li
+            onClick={handleDropdown}
+            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+          >
+            Products1
+          </li>
+          <li
+            onClick={handleDropdown}
+            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+          >
+            Products2
+          </li>
+          <li
+            onClick={handleDropdown}
+            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+          >
+            Products3
+          </li>
+          <li
+            onClick={handleDropdown}
+            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+          >
+            Products4
+          </li>
+        </ul>
       </div>
     </>
   );

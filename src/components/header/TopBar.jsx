@@ -11,7 +11,7 @@ const TopBar = () => {
     <>
       <div className="border-b border-[#CCBFCC] border-solid py-[22px]">
         <Container>
-          <div className="flex justify-between items-center font-['Montserrat'] font-normal text-sm relative">
+          <div className="sm:flex sm:justify-between sm:items-center font-['Montserrat'] font-normal text-sm relative">
             <TopLeftBar />
             <TopRightBar />
           </div>
