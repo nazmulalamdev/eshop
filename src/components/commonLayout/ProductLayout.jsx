@@ -24,7 +24,6 @@ const ProductLayout = ({
   const [ratingValue, setReatingValue] = useState(
     new Array(+rating).fill(rating)
   );
-  console.log(ratingValue);
 
   return (
     <>

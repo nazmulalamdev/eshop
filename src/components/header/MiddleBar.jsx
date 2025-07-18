@@ -5,13 +5,22 @@ import UserIcon from "../../icons/UserIcon";
 import Container from "../commonLayout/Container";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { showNavbar } from "../../slices/navbarSlice";
 
 const MiddleBar = () => {
+  let dispatch = useDispatch();
   const [show, setShow] = useState(false);
 
   const handleSearch = () => {
     setShow(!show);
   };
+
+  let handleShowNav = () => {
+    dispatch(showNavbar());
+    console.log(showNavbar());
+  };
+
   return (
     <>
       <Container>
@@ -43,7 +52,11 @@ const MiddleBar = () => {
                 />
               </Link>
               <Link>
-                <FaBars className="text-base absolute top-1/2 -translate-y-1/2 right-12  text-[#303030] sm:hidden" />
+                <FaBars
+                  size={24}
+                  onClick={handleShowNav}
+                  className="text-base absolute top-1/2 -translate-y-1/2 right-16  text-[#303030] sm:hidden"
+                />
               </Link>
             </div>
             <Link to={"/cart"} className="relative sm:pl-[50px] sm:mr-[90px]">

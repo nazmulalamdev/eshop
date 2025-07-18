@@ -18,7 +18,8 @@ export const navbarSlice = createSlice({
 })
 
 export const {
-  showNavbar
+  showNavbar,
+  hideNavbar
 } = navbarSlice.actions
 
 export default navbarSlice.reducer

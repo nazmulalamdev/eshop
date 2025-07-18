@@ -62,14 +62,22 @@ const FeaturedProduct = () => {
     prevArrow: <SamplePrevArrow />,
     autoplay: true,
     autoplaySpeed: 1000,
+    responsive: [
+      {
+        breakpoint: 415,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <>
-      <div className="mt-[80px]">
+      <div className="mt-5 sm:mt-20">
         <Container>
-          <div className="flex justify-between mb-[48px]">
-            <div className="font-['Poppins'] font-semibold text-[36px] text-[#303030]">
+          <div className="sm:flex sm:justify-between mb-12">
+            <div className="font-['Poppins'] font-semibold text-[36px] text-[#303030] mb-5 sm:mb-0">
               <h2>Featured Products</h2>
             </div>
             <div>
@@ -81,7 +89,7 @@ const FeaturedProduct = () => {
               </Link>
             </div>
           </div>
-          <div className="relative px-[40px]">
+          <div className="sm:relative px-[40px]">
             <Slider {...settings}>
               {/* <div className="flex gap-1"> */}
               <ProductLayout

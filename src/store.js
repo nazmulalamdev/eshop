@@ -1,12 +1,12 @@
 import {
     configureStore
 } from '@reduxjs/toolkit'
-import {
-    navbarSlice
-} from './slices/navbarSlice'
+import
+navbarReducer
+from './slices/navbarSlice'
 
 export default configureStore({
     reducer: {
-        navbar: navbarSlice,
+        handleNavbar: navbarReducer,
     },
 })

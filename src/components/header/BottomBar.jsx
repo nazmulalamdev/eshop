@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import Container from "../commonLayout/Container";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
+import { useDispatch, useSelector } from "react-redux";
+import { IoClose } from "react-icons/io5";
+import { hideNavbar } from "../../slices/navbarSlice";
 
 const BottomBar = () => {
+  let dispatch = useDispatch();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -66,6 +70,13 @@ const BottomBar = () => {
       document.removeEventListener("mousedown", handleClickCategories);
     };
   }, []);
+
+  let navbar = useSelector((state) => state.handleNavbar.value);
+  console.log(navbar);
+
+  let handleHideNav = () => {
+    dispatch(hideNavbar());
+  };
 
   return (
     <>
@@ -173,34 +184,39 @@ const BottomBar = () => {
           </div>
         </Container>
       </div>
-      <div className="block sm:hidden">
-        <ul className="sm:hidden h-screen top-0 py-2 font-['Montserrat'] font-normal text-base leading-6 text-black absolute z-10 mt-2 w-full bg-white shadow-xl rounded-lg">
-          <li
-            onClick={handleDropdown}
-            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-          >
-            Products1
-          </li>
-          <li
-            onClick={handleDropdown}
-            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-          >
-            Products2
-          </li>
-          <li
-            onClick={handleDropdown}
-            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-          >
-            Products3
-          </li>
-          <li
-            onClick={handleDropdown}
-            className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-          >
-            Products4
-          </li>
-        </ul>
-      </div>
+      {navbar && (
+        <div className="block sm:hidden">
+          <div className="h-screen top-0 py-2 font-['Montserrat'] font-normal text-base leading-6 text-black absolute z-10 mt-2 w-full bg-white shadow-xl rounded-lg">
+            <IoClose onClick={handleHideNav} />
+            <ul>
+              <li
+                onClick={handleDropdown}
+                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+              >
+                Products1
+              </li>
+              <li
+                onClick={handleDropdown}
+                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+              >
+                Products2
+              </li>
+              <li
+                onClick={handleDropdown}
+                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+              >
+                Products3
+              </li>
+              <li
+                onClick={handleDropdown}
+                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+              >
+                Products4
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
     </>
   );
 };
