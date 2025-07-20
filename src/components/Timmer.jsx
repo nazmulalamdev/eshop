@@ -4,7 +4,7 @@ const Timmer = () => {
   const [timeLeft, setTimeLeft] = useState(calcutaleTimeLeft);
 
   function calcutaleTimeLeft() {
-    const saleEndDate = new Date("Jul 10, 2025 10:00 PM +06").getTime();
+    const saleEndDate = new Date("Jul 30, 2025 10:00 PM +06").getTime();
     const now = new Date().getTime();
     const difference = saleEndDate - now;
 
@@ -40,7 +40,7 @@ const Timmer = () => {
 
   return (
     <>
-      <div className=" flex justify-center gap-6 mt-10 max-w-[420px] mb-[72px]">
+      <div className=" flex justify-center gap-4 sm:gap-6 mt-10 max-w-[420px] mb-10 sm:mb-18">
         <div className="text-center">
           <h2 className="text-[#E5735D] font-['Poppins'] text-4xl font-semibold">
             {String(timeLeft.days).padStart(2, "0")}

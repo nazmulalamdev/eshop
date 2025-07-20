@@ -6,11 +6,19 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const NewProduct = () => {
+  const categoriesName = [
+    { value: "AC", label: "All Categories" },
+    { value: "FP", label: "Black Friday" },
+    { value: "NP", label: "New Products" },
+    { value: "AUD", label: "Best Saller" },
+    { value: "EUR", label: "Free Shipping" },
+  ];
+
   return (
     <>
-      <div className="mt-[80px]">
+      <div className="mt-15 sm:mt-20 px-2 sm:px-0">
         <Container>
-          <div className="flex justify-between mb-[48px]">
+          <div className="sm:flex sm:justify-between mb-12">
             <div className="font-['Poppins'] font-semibold text-[36px] text-[#303030]">
               <h2>New Products</h2>
             </div>
@@ -22,41 +30,20 @@ const NewProduct = () => {
                 className="w-[233px] p-2.5 bg-white font-['Montserrat'] font-bold text-base text-[#FF624C]"
                 name="currency"
               >
-                <option
-                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
-                  value="AC"
-                >
-                  All Categories
-                </option>
-                <option
-                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
-                  value="FP"
-                >
-                  Black Friday
-                </option>
-                <option
-                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
-                  value="NP"
-                >
-                  New Products
-                </option>
-                <option
-                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
-                  value="AUD"
-                >
-                  Best Saller
-                </option>
-                <option
-                  className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
-                  value="EUR"
-                >
-                  Free Shipping
-                </option>
+                {categoriesName.map((item) => (
+                  <option
+                    className="px-4 py-3 hover:bg-gray-200 cursor-pointer text-[#303030] font-normal"
+                    value={item.value}
+                    key={item.value}
+                  >
+                    {item.label}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
 
-          <div className="grid grid-cols-5 gap-1 items-stretch">
+          <div className="sm:grid sm:grid-cols-5 sm:gap-1 sm:items-stretch flex flex-col gap-3">
             <ProductLayout
               percentTag="50%"
               category="watch"

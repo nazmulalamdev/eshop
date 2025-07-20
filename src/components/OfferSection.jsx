@@ -6,8 +6,8 @@ const OfferSection = () => {
   return (
     <>
       <Container>
-        <div className="flex justify-between mt-[80px]">
-          <div>
+        <div className="sm:flex sm:justify-between mt-15 sm:mt-20">
+          <div className="mb-3 sm:mb-0">
             <Link to={"#"}>
               <img src="images/offer1.png" alt="offerimg" />
             </Link>

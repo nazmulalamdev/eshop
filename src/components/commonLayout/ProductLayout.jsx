@@ -29,7 +29,7 @@ const ProductLayout = ({
     <>
       <div
         // style={{ background: bg }}
-        className={`flex flex-col h-full justify-between border border-transparent hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover} ${border}`}
+        className={`flex flex-col h-full justify-between border border-[#C3C3C3] sm:border-transparent sm:hover:border-[#C3C3C3] duration-300 p-6 group rounded-lg ${bg} ${hover} ${border}`}
       >
         <div className="relative">
           <img
@@ -48,7 +48,7 @@ const ProductLayout = ({
               {percentTag}
             </div>
           )}
-          <div className="flex items-center absolute bottom-[6px] left-[48%] -translate-x-1/2 gap-5 scale-0 group-hover:scale-100 duration-300">
+          <div className="flex items-center absolute bottom-[6px] left-[48%] -translate-x-1/2 gap-5 sm:scale-0 sm:group-hover:scale-100 duration-300">
             <div className="w-[50px] h-[50px] bg-white rounded-full border border-[#FF624C] flex items-center justify-center text-[25px] text-[#FF624C] hover:text-white hover:bg-[#FF624C] duration-300 cursor-pointer">
               <MdOutlineShoppingCart />
             </div>

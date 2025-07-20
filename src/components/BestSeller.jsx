@@ -8,9 +8,9 @@ const BestSeller = () => {
   return (
     <>
       <Container>
-        <div className="flex justify-between mt-[80px]">
+        <div className="sm:flex sm:justify-between mt-20 px-2 sm:px-0">
           <div className="max-w-[902px]">
-            <div className="flex justify-between mb-[48px]">
+            <div className="sm:flex sm:justify-between mb-12">
               <div className="font-['Poppins'] font-semibold text-[36px] text-[#303030]">
                 <h2>Best Seller</h2>
               </div>
@@ -25,7 +25,7 @@ const BestSeller = () => {
             </div>
 
             <div className="flex gap-5 flex-wrap">
-              <div className="max-w-[285px]">
+              <div className="sm:max-w-[285px]">
                 <ProductLayout
                   percentTag={false}
                   category="laptop"
@@ -39,7 +39,7 @@ const BestSeller = () => {
                   stockAmount="50"
                 />
               </div>
-              <div className="max-w-[285px]">
+              <div className="sm:max-w-[285px]">
                 <ProductLayout
                   percentTag="30%"
                   category="phone"
@@ -55,7 +55,7 @@ const BestSeller = () => {
                   priceless="118.00"
                 />
               </div>
-              <div className="max-w-[285px]">
+              <div className="sm:max-w-[285px]">
                 <ProductLayout
                   percentTag={false}
                   category="phone"
@@ -69,7 +69,7 @@ const BestSeller = () => {
                   stockAmount="40"
                 />
               </div>
-              <div className="max-w-[285px]">
+              <div className="sm:max-w-[285px]">
                 <ProductLayout
                   percentTag={false}
                   category="phone"
@@ -83,7 +83,7 @@ const BestSeller = () => {
                   stockAmount="40"
                 />
               </div>
-              <div className="max-w-[285px]">
+              <div className="sm:max-w-[285px]">
                 <ProductLayout
                   percentTag={false}
                   category="phone"
@@ -97,7 +97,7 @@ const BestSeller = () => {
                   stockAmount="40"
                 />
               </div>
-              <div className="max-w-[285px]">
+              <div className="sm:max-w-[285px]">
                 <ProductLayout
                   percentTag="10%"
                   category="phone"
@@ -115,7 +115,7 @@ const BestSeller = () => {
               </div>
             </div>
           </div>
-          <div className="max-w-[544px]">
+          <div className="max-w-[544px] hidden sm:block">
             <Link>
               <img src="images/bestseller.png" alt="bestseller" />
             </Link>

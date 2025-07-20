@@ -4,6 +4,7 @@
     @apply font-['Montserrat'] font-normal text-base text-[#303030];
 }
 
+
 input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     width: 16px;

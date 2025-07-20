@@ -17,8 +17,8 @@ const Faq = () => {
         style={{ background: "url('images/faqbg.png')" }}
       >
         <Container>
-          <div className="flex gap-[112px]">
-            <div className="w-[902px]">
+          <div className="sm:flex gap-28 px-2 sm:px-0">
+            <div className="sm:w-[902px]">
               {AccordianData.map((item, index) => (
                 <AccordianItem
                   key={index}
@@ -31,7 +31,7 @@ const Faq = () => {
                 />
               ))}
             </div>
-            <div className="mt-[300px]">
+            <div className="mt-75">
               <h2 className="max-w-[306px] font-['Poppins'] font-semibold text-[36px] text-[#303030] leading-[46px] mb-[24px]">
                 Frequently Asked Questions
               </h2>

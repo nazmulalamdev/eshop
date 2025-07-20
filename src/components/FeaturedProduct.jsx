@@ -13,7 +13,7 @@ function SampleNextArrow({ onClick }) {
   return (
     <div
       onClick={onClick}
-      className="absolute right-[-40px] top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+      className="absolute -right-5 sm:-right-10 top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer bg-white sm:bg-transparent"
     >
       <FaChevronRight size={16} />
     </div>
@@ -39,7 +39,7 @@ function SamplePrevArrow({ onClick }) {
   return (
     <div
       onClick={onClick}
-      className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer mr-[30px]"
+      className="absolute -left-5 sm:-left-10 top-1/2 -translate-y-1/2 z-10 border text-[#303030] rounded-full w-10 h-10 flex items-center justify-center cursor-pointer mr-[30px] bg-white sm:bg-transparent"
     >
       <FaChevronLeft size={16} />
     </div>
@@ -89,7 +89,7 @@ const FeaturedProduct = () => {
               </Link>
             </div>
           </div>
-          <div className="sm:relative px-[40px]">
+          <div className="sm:relative px-6 sm:px-10">
             <Slider {...settings}>
               {/* <div className="flex gap-1"> */}
               <ProductLayout
